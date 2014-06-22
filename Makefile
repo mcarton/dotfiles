@@ -3,9 +3,25 @@ LN = ln -s
 
 .PHONY: install
 install: \
+    awesome \
     vim \
     vimperator \
     zsh
+
+### awesome:
+awesome: \
+    $(HOME)/.config/awesome/calendar2.lua \
+    $(HOME)/.config/awesome/fraxbat.lua \
+    $(HOME)/.config/awesome/rc.lua
+
+$(HOME)/.config/awesome/calendar2.lua:
+	$(LN) $(PWD)/awesome/calendar2.lua $@
+
+$(HOME)/.config/awesome/fraxbat.lua:
+	$(LN) $(PWD)/awesome/fraxbat.lua $@
+
+$(HOME)/.config/awesome/rc.lua:
+	$(LN) $(PWD)/awesome/rc.lua $@
 
 ### vim:
 vim: $(HOME)/.vim/vimrc
