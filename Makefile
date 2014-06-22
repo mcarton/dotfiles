@@ -41,6 +41,12 @@ xbindkeys: $(HOME)/.xbindkeysrc
 $(HOME)/.xbindkeysrc:
 	$(LN) $(PWD)/xbindkeys/xbindkeysrc $@
 
+### xmodmap
+xmodmap: $(HOME)/.Xmodmap
+
+$(HOME)/.Xmodmap:
+	$(LN) $(PWD)/xmodmap/Xmodmap $@
+
 ### zsh:
 zsh: $(HOME)/.zshenv $(HOME)/.config/zsh/.zshrc
 
