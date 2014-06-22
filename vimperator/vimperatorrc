@@ -1,0 +1,8 @@
+set runtimepath=~/.config/vimperator
+nnoremap h H
+nnoremap H h
+nnoremap l L
+nnoremap L l
+nnoremap gh gT
+nnoremap gl gt
+nnoremap gt <C-^>
