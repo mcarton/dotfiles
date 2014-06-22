@@ -1,0 +1,116 @@
+" for bundle, various plugins
+    set nocompatible       " be iMproved
+    filetype off           " required!
+
+    set runtimepath+=~/.vim/bundle/vundle/
+    call vundle#rc()
+
+    Bundle 'Lokaltog/powerline'
+    Bundle 'SirVer/ultisnips'
+    Bundle 'Valloric/YouCompleteMe'
+    Bundle 'ervandew/supertab'
+    Bundle 'gmarik/vundle'
+    Bundle 'http://git.code.sf.net/p/vim-latex/vim-latex'
+    " annoyingly too slow
+    " Bundle 'mhinz/vim-signify'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'tpope/vim-endwise'
+    Bundle 'tpope/vim-liquid'
+    Bundle 'tpope/vim-sensible'
+    Bundle 'vim-scripts/YankRing.vim'
+    Bundle 'vim-scripts/javacomplete'
+
+" for signify
+    " let g:signify_vcs_list = [ 'git' ]
+
+" for powerline
+    set runtimepath+=~/.vim/bundle/powerline/powerline/bindings/vim
+
+" for ycm
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/ycm_extra_conf.py'
+
+" for ultisnips
+    " If you want :UltiSnipsEdit to split your window.
+    let g:UltiSnipsEditSplit="horizontal"
+
+    " For ultisnips & ycm compatibility
+    let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+    let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+    let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" for C++
+    let g:syntastic_cpp_compiler_options='-std=c++1y'
+    let g:ycm_complete_in_comments=1
+    let g:ycm_confirm_extra_conf=0
+
+" for vim latex
+    filetype plugin on
+    let g:tex_flavor='latex'
+    let g:Tex_DefaultTargetFormat='pdf'
+    let g:Tex_FoldedSections='part,chapter,section,%%fakesection'
+    let g:Tex_FoldedEnvironments=''
+    let g:Tex_FoldedCommands=''
+    let g:Tex_FoldedMisc=''
+    let g:Tex_GotoError=0
+
+" for java
+    autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+    let g:syntastic_java_javac_config_file_enabled=1
+
+" for html and css
+    autocmd Filetype htlm,css set sw=2
+
+" spell checking and wrapping in some file types
+    autocmd Filetype gitcommit set spell textwidth=72
+    autocmd Filetype mkd,liquid,tex set spell textwidth=80
+
+" egg
+    autocmd BufNewFile,BufRead *.egg set filetype=egg
+
+" llvm ir code
+    autocmd BufNewFile,BufRead *.ll set filetype=llvm
+
+" cités
+    autocmd BufNewFile,BufRead vocabulary.cités set filetype=cités
+
+" why3
+    autocmd BufNewFile,BufRead *.why,*.mlw set filetype=why3
+
+" Flag problematic whitespace (trailing spaces, spaces before tabs).
+highlight BadWhitespace term=standout ctermbg=red guibg=red
+match BadWhitespace /\s\+$\| \+\t/
+
+" Don't exit visual mode when shifting.
+vnoremap < <gv
+vnoremap > >gv
+
+" Move up and down by visual lines not buffer lines.
+nnoremap <Up>   gk
+vnoremap <Up>   gk
+nnoremap <Down> gj
+vnoremap <Down> gj
+
+" other stuffs
+    set mouse=a
+    " set mousefocus                " would be great but only work in the gui
+    set nu
+    set sw=4
+    set expandtab
+    set guioptions-=lLrRT
+    set cpoptions+="#"
+    syntax on
+    filetype plugin indent on
+
+    " set split bar to be contiguous
+    set fillchars=vert:│
+
+    " color at 80th column
+    set colorcolumn=81,91,101
+    hi ColorColumn ctermbg=lightgrey
+
+    " makes :s///g default
+    set gdefault
+
+    " set <leader> key to a more azerty-friendly key
+    let mapleader = ","
+
