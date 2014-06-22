@@ -35,8 +35,14 @@ vimperator: $(HOME)/.config/vimperator/vimperatorrc
 $(HOME)/.config/vimperator/vimperatorrc:
 	$(LN) $(PWD)/vimperator/vimperatorrc $@
 
+### xbindkeys
+xbindkeys: $(HOME)/.xbindkeysrc
+
+$(HOME)/.xbindkeysrc:
+	$(LN) $(PWD)/xbindkeys/xbindkeysrc $@
+
 ### zsh:
-zsh: $(HOME)/.zshenv $(HOME)/.config/zsh/.zshrc:
+zsh: $(HOME)/.zshenv $(HOME)/.config/zsh/.zshrc
 
 $(HOME)/.zshenv:
 	$(LN) $(PWD)/zsh/zshenv $@

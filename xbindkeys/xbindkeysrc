@@ -1,0 +1,44 @@
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+#
+# A list of keys is in /usr/include/X11/keysym.h and in
+# /usr/include/X11/keysymdef.h
+# The XK_ is not needed.
+
+# By defaults, xbindkeys does not pay attention with the modifiers
+# NumLock, CapsLock and ScrollLock.
+# Uncomment the lines above if you want to pay attention to them.
+
+#keystate_numlock = enable
+#keystate_capslock = enable
+#keystate_scrolllock= enable
+
+"$HOME/.config/get_info -a"
+    m:0x10 + c:210
+    Mod2 + XF86Launch3
+
+"amixer -q set Master toggle"
+    XF86AudioMute
+
+"amixer -q set Master 5%- unmute"
+    XF86AudioLowerVolume
+
+"amixer -q set Master 5%+ unmute"
+    XF86AudioRaiseVolume
+
+"cmus-remote --pause"
+    m:0x10 + c:172
+    Mod2 + XF86AudioPlay
+
+"cmus-remote --next"
+    m:0x10 + c:171
+    Mod2 + XF86AudioNext
+
+"cmus-remote --prev"
+    m:0x10 + c:173
+    Mod2 + XF86AudioPrev
+
+"sudo pm-suspend"
+    m:0x10 + c:150
+    Mod2 + XF86Sleep
+
