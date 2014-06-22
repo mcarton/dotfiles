@@ -23,6 +23,21 @@ $(HOME)/.config/awesome/fraxbat.lua:
 $(HOME)/.config/awesome/rc.lua:
 	$(LN) $(PWD)/awesome/rc.lua $@
 
+### cmus:
+cmus: \
+    $(HOME)/.config/cmus \
+    $(HOME)/.config/cmus/autosave \
+    $(HOME)/.config/cmus/rc
+
+$(HOME)/.config/cmus:
+	mkdir -p $(HOME)/.config/cmus
+
+$(HOME)/.config/cmus/autosave:
+	$(LN) $(PWD)/cmus/autosave $@
+
+$(HOME)/.config/cmus/rc:
+	$(LN) $(PWD)/cmus/rc $@
+
 ### git:
 git: \
     $(HOME)/.config/git \
