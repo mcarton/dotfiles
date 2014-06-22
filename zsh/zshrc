@@ -1,0 +1,137 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.config/zsh/histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt autocd
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '$HOME/.config/zsh/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+
+### Ignores duplicates in histfile
+setopt HIST_IGNORE_ALL_DUPS
+
+### Improve 
+# see http://superuser.com/questions/378018/how-can-i-do-ctrl-z-and-bg-in-one-keypress-to-make-process-continue-in-backgroun#answer-378045
+fancy-ctrl-z () {
+    if [[ $#BUFFER -eq 0 ]]; then
+        bg
+        zle redisplay
+    else
+        zle push-input
+    fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
+
+### Add case-insensitive completion
+setopt correct
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+### Other stuffs
+setopt extended_glob
+#setopt share_history
+setopt PRINT_EXIT_VALUE # show exit code when != 0
+
+#ignore .class for vim
+zstyle ':completion:*:*:vim:*:*files' ignored-patterns '*.class'
+
+### Prompt and git-integration
+setopt prompt_subst
+autoload colors
+colors
+source ~/Programs/zsh-git-prompt/zshrc.sh
+export PS1="%{$(tput bold)$(tput setf 1)%}⏜⊚⏝ %{${reset_color}%}@%m@%D{%H:%M:%S}@%{$(tput setf 2)%}%~%{$(tput setf 0)%}"'$(git_super_status)'"%# %{${reset_color}%}"
+KEYTIMEOUT=1
+
+### Vim-zsh
+bindkey -v
+
+setopt transientrprompt
+vim_ins_mode=""
+vim_cmd_mode="%{$fg[green]%}%{$fg_bold[black]$bg[green]%}𝅘𝅥𝅮%{$reset_color%}"
+vim_mode=$vim_ins_mode
+function zle-line-init zle-keymap-select {
+    export RPS1="${${KEYMAP/vicmd/${vim_cmd_mode}}/(main|viins)/${vim_ins_mode}}"
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+### Aliases
+alias :q='exit'
+mkdircd () { mkdir $1; cd $1; }
+alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+alias pacman='pacman --color auto'
+alias ll='ls -l --time-style=long-iso'
+alias -g :g='| grep'
+alias -g :l='| less'
+alias alert='notify-send --urgency=low'
+alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
+alias canto-daemon='canto-daemon -D ~/.config/canto-ng'
+alias canto-curses='canto-curses -D ~/.config/canto-ng'
+alias canto-remote='canto-remote -D ~/.config/canto-ng'
+
+### Add color to man pages
+man() {
+    env LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+        man "$@"
+}
+
+### Reverse search
+bindkey '^R' history-incremental-search-backward
+
+### Report CPU usage for commands running longer than 2 seconds
+REPORTTIME=2
+
+### Remap some keys that zsh screws ###
+# create a zkbd compatible hash;
+# to add other keys to this hash, see: man 5 terminfo
+typeset -A key
+
+key[Home]=${terminfo[khome]}
+key[End]=${terminfo[kend]}
+key[Insert]=${terminfo[kich1]}
+key[Delete]=${terminfo[kdch1]}
+key[Up]=${terminfo[kcuu1]}
+key[Down]=${terminfo[kcud1]}
+key[Left]=${terminfo[kcub1]}
+key[Right]=${terminfo[kcuf1]}
+key[PageUp]=${terminfo[kpp]}
+key[PageDown]=${terminfo[knp]}
+
+# setup key accordingly
+[[ -n "${key[Home]}"    ]]  && bindkey  "${key[Home]}"    beginning-of-line
+[[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
+[[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
+[[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
+[[ -n "${key[Up]}"      ]]  && bindkey  "${key[Up]}"      up-line-or-history
+[[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    down-line-or-history
+[[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
+[[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+function zle-line-init () {
+    if (( ${+terminfo[smkx]} )); then
+        echoti smkx
+    fi
+}
+function zle-line-finish () {
+    if (( ${+terminfo[rmkx]} )); then
+        echoti rmkx
+    fi
+}
+zle -N zle-line-init
+zle -N zle-line-finish
+

@@ -4,7 +4,8 @@ LN = ln -s
 .PHONY: install
 install: \
     vim \
-    vimperator
+    vimperator \
+    zsh
 
 ### vim:
 vim: $(HOME)/.vim/vimrc
@@ -17,4 +18,13 @@ vimperator: $(HOME)/.config/vimperator/vimperatorrc
 
 $(HOME)/.config/vimperator/vimperatorrc:
 	$(LN) $(PWD)/vimperator/vimperatorrc $@
+
+### zsh:
+zsh: $(HOME)/.zshenv $(HOME)/.config/zsh/.zshrc:
+
+$(HOME)/.zshenv:
+	$(LN) $(PWD)/zsh/zshenv $@
+
+$(HOME)/.config/zsh/.zshrc:
+	$(LN) $(PWD)/zsh/zshrc $@
 

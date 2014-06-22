@@ -1,0 +1,8 @@
+export ZDOTDIR="$HOME/.config/zsh"
+export EDITOR=vim
+export GTK2_RC_FILES="$HOME/.config/gtk-2.0/gtkrc"
+export LESSHISTFILE="$HOME/.config/lesshst"
+#export VIMINIT='let $MYVIMRC="$HOME/.config/vim/vimrc" | source $MYVIMRC'
+export VIMPERATOR_INIT="source /home/martin/.config/vimperator/vimperatorrc"
+export VIMPERATOR_RUNTIME="/home/martin/.config/vimperator"
+export GCC_COLORS=1
