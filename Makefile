@@ -79,10 +79,16 @@ xbindkeys: $(HOME)/.xbindkeysrc
 $(HOME)/.xbindkeysrc:
 	$(LN) $(PWD)/xbindkeys/xbindkeysrc $@
 
-### xmodmap
-xmodmap: $(HOME)/.Xmodmap
+### xinitrc
+xinitrc: $(HOME)/.xinitrc
 
-$(HOME)/.Xmodmap:
+$(HOME)/.xinitrc:
+	$(LN) $(PWD)/xinit/xinitrc $@
+
+### xmodmap
+xmodmap: $(HOME)/.config/Xmodmap
+
+$(HOME)/.config/Xmodmap:
 	$(LN) $(PWD)/xmodmap/Xmodmap $@
 
 ### zsh:
