@@ -46,6 +46,9 @@
     let g:syntastic_cpp_compiler_options='-std=c++1y'
     let g:ycm_complete_in_comments=1
     let g:ycm_confirm_extra_conf=0
+    set matchpairs+=<:>
+    " disable autocomment for //
+    au FileType c,cpp setlocal comments-=:// comments+=f://
 
 " for vim latex
     filetype plugin on
