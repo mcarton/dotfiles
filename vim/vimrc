@@ -14,6 +14,7 @@
     " annoyingly too slow
     " Bundle 'mhinz/vim-signify'
     Bundle 'scrooloose/syntastic'
+    Bundle 'terryma/vim-expand-region'
     Bundle 'tpope/vim-endwise'
     Bundle 'tpope/vim-liquid'
     Bundle 'tpope/vim-sensible'
@@ -23,6 +24,9 @@
 " set <leader> key to a more azerty-friendly key (must appear before any
 " mapping using it)
     let mapleader = ","
+
+" terryma/vim-expand-region default mapping for shrink is _
+    map - <Plug>(expand_region_shrink)
 
 " for signify
     " let g:signify_vcs_list = [ 'git' ]
