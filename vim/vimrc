@@ -20,6 +20,7 @@
     Bundle 'tpope/vim-sensible'
     Bundle 'vim-scripts/YankRing.vim'
     Bundle 'vim-scripts/javacomplete'
+    Bundle 'yegappan/mru'
 
 " set <leader> key to a more azerty-friendly key (must appear before any
 " mapping using it)
