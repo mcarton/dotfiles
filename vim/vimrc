@@ -123,4 +123,7 @@ vnoremap <Down> gj
     " makes :s///g default
     set gdefault
 
+    " close quick fix list on selection
+    autocmd FileType qf nmap <buffer> <cr> <cr>:ccl<cr>
+
 
