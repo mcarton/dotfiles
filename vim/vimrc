@@ -20,6 +20,10 @@
     Bundle 'vim-scripts/YankRing.vim'
     Bundle 'vim-scripts/javacomplete'
 
+" set <leader> key to a more azerty-friendly key (must appear before any
+" mapping using it)
+    let mapleader = ","
+
 " for signify
     " let g:signify_vcs_list = [ 'git' ]
 
@@ -111,6 +115,4 @@ vnoremap <Down> gj
     " makes :s///g default
     set gdefault
 
-    " set <leader> key to a more azerty-friendly key
-    let mapleader = ","
 
