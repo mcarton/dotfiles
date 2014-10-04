@@ -11,6 +11,17 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+### Custom completion
+fpath=(~/.config/zsh/completion $fpath)
+
+# compsys initialization
+autoload -U compinit
+compinit
+
+# show completion menu when number of options is at least 2
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' verbose yes
+
 ### Ignores duplicates in histfile
 setopt HIST_IGNORE_ALL_DUPS
 
