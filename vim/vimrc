@@ -102,6 +102,17 @@ vnoremap <Up>   gk
 nnoremap <Down> gj
 vnoremap <Down> gj
 
+" toggle spell lang
+function! ToggleSpell()
+    if &spelllang =~# 'en'
+        set spelllang=fr
+    else
+        set spelllang=en
+    endif
+endfunction
+
+noremap <leader>z <ESC>:call ToggleSpell()<CR>
+
 " other stuffs
     set mouse=a
     " set mousefocus                " would be great but only work in the gui
