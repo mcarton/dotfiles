@@ -137,4 +137,5 @@ noremap <leader>z <ESC>:call ToggleSpell()<CR>
     " close quick fix list on selection
     autocmd FileType qf nmap <buffer> <cr> <cr>:ccl<cr>
 
+    nnoremap <leader>m :!make<cr>
 
