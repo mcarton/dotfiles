@@ -67,6 +67,8 @@
 
 " for java
     autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+    set suffixes+=.class
+
     let g:syntastic_java_javac_config_file_enabled=1
 
 " for html and css
@@ -117,15 +119,17 @@ noremap <leader>z <ESC>:call ToggleSpell()<CR>
     set mouse=a
     " set mousefocus                " would be great but only work in the gui
     set nu
-    set sw=4
+    set shiftwidth=4
     set expandtab
     set guioptions-=lLrRT
     set cpoptions+="#"
     syntax on
     filetype plugin indent on
+    set foldmethod=marker
 
-    " set split bar to be contiguous
-    set fillchars=vert:│
+    " set split bar to be contiguous (there is an unbreakable space at the end
+    " of that line — vim does not like classic space here)
+    set fillchars=vert: 
 
     " color at 80th column
     set colorcolumn=81,91,101
@@ -138,4 +142,5 @@ noremap <leader>z <ESC>:call ToggleSpell()<CR>
     autocmd FileType qf nmap <buffer> <cr> <cr>:ccl<cr>
 
     nnoremap <leader>m :!make<cr>
+    nnoremap <leader>w <c-w>
 
