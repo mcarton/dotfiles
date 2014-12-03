@@ -59,6 +59,8 @@
     " disable autocomment for //
     au FileType c,cpp setlocal comments-=:// comments+=f://
 
+    set path+=include
+
 " for vim latex
     filetype plugin on
     let g:tex_flavor='latex'
