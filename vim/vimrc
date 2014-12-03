@@ -132,6 +132,7 @@ noremap <leader>z <ESC>:call ToggleSpell()<CR>
     syntax on
     filetype plugin indent on
     set foldmethod=marker
+    set showcmd                     " show partial commands
 
     " set split bar to be contiguous (there is an unbreakable space at the end
     " of that line — vim does not like classic space here)
