@@ -6,3 +6,9 @@ nnoremap L l
 nnoremap gh gT
 nnoremap gl gt
 nnoremap gt <C-^>
+
+let mapleader = ","
+
+command -nargs=0 interwiki javascript content.location.href = io.system("interwiki", content.location.href)
+nnoremap <leader>z :interwiki<cr>
+
