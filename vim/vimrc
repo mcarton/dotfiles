@@ -124,7 +124,7 @@ noremap <leader>z <ESC>:call ToggleSpell()<CR>
 " other stuffs
     set mouse=a
     " set mousefocus                " would be great but only work in the gui
-    set nu
+    set number
     set shiftwidth=4
     set expandtab
     set guioptions-=lLrRT
