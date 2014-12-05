@@ -86,8 +86,8 @@ vimperator: \
 $(HOME)/.config/vimperator/vimperatorrc:
 	$(LN) $(PWD)/vimperator/vimperatorrc $@
 
-$(HOME)/.config/vimperator/interwiki.py:
-	$(LN) $(PWD)/vimperator/interwiki.py $@
+/usr/bin/interwiki: vimperator/interwiki.py
+	cp $(PWD)/vimperator/interwiki.py $@
 
 ### xbindkeys
 xbindkeys: $(HOME)/.xbindkeysrc
