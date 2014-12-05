@@ -43,6 +43,12 @@ def xkcd(url):
     else:
         return 'http://explainxkcd.com/'
 
+boost_re = r'http://www.boost.org/doc/libs/.*'
+def boost(url):
+    what = re.match(r'http://www.boost.org/doc/libs/[\d_]*/(.*)', url)
+
+    return 'http://www.boost.org/doc/libs/release/' + what.group(1)
+
 python_re = r'https?://docs.python.org/.*'
 def python(url):
     version = sys.version_info
@@ -54,6 +60,7 @@ map = {
     wikipedia_re: wiki,
     wiktionary_re: wiki,
     xkcd_re: xkcd,
+    boost_re: boost,
     python_re: python,
 }
 
