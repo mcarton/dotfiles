@@ -4,6 +4,7 @@ import codecs
 import json
 import re
 import urllib.request
+import sys
 
 def get_only_in_map(map):
     return next(iter(map.values()))
@@ -42,10 +43,18 @@ def xkcd(url):
     else:
         return 'http://explainxkcd.com/'
 
+python_re = r'https?://docs.python.org/.*'
+def python(url):
+    version = sys.version_info
+    what = re.match(r'https?://docs.python.org/[\d.]*/(.*)', url)
+
+    return 'https://docs.python.org/%s.%s/%s' % (version[:2] + (what.group(1),))
+
 map = {
     wikipedia_re: wiki,
     wiktionary_re: wiki,
     xkcd_re: xkcd,
+    python_re: python,
 }
 
 url = input()
