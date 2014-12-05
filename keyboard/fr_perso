@@ -1,0 +1,13 @@
+partial alphanumeric_keys
+xkb_symbols "yesdeadkeys" {
+    include "fr(basic)"
+
+    name[Group1]="French";
+
+    key <AE02>	{ [ dead_acute,          2,   asciitilde,    oneeighth ]	};
+    key <AE07>	{ [ dead_grave,          7,        grave, seveneighths ]	};
+    key <AC11>	{ [  backslash,    percent, dead_circumflex, dead_caron]	};
+
+    include "level3(ralt_switch)"
+};
+
