@@ -15,4 +15,4 @@ let mapleader = ","
 
 command -nargs=0 interwiki javascript content.location.href = io.system("interwiki", content.location.href)
 nnoremap <leader>z :interwiki<cr>
-
+nnoremap <leader>gd :tabduplicate<cr>
