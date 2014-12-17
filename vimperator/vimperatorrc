@@ -1,4 +1,8 @@
 set runtimepath=~/.config/vimperator
+
+hi StatusLine color: black;
+set gui=nonavigation
+
 nnoremap h H
 nnoremap H h
 nnoremap l L
