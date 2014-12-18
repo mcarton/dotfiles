@@ -13,6 +13,16 @@ nnoremap gt <C-^>
 
 let mapleader = ","
 
-command -nargs=0 interwiki javascript content.location.href = io.system("interwiki", content.location.href)
+command -nargs=0 interwiki javascript interwiki()
 nnoremap <leader>z :interwiki<cr>
 nnoremap <leader>gd :tabduplicate<cr>
+
+js << EOF
+    function interwiki() {
+        url = io.system("interwiki", content.location.href)
+        if (url) {
+            content.location.href = url
+        }
+    }
+EOF
+
