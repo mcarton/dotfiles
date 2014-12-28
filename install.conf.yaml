@@ -1,0 +1,39 @@
+- link:
+    ~/.config/awesome/calendar2.lua:
+        create: true
+        path: awesome/calendar2.lua
+    ~/.config/awesome/fraxbat.lua:
+        create: true
+        path: awesome/fraxbat.lua
+    ~/.config/awesome/rc.lua:
+        create: true
+        path: awesome/rc.lua
+
+    ~/.config/cmus/rc:
+        create: true
+        path: cmus/rc
+
+    ~/.config/git:
+        create: true
+        path: git
+
+    ~/.vim/vimrc:
+        create: true
+        path: vim/vimrc
+
+    ~/.config/vimperator/vimperatorrc:
+        create: true
+        path: vimperator/vimperatorrc
+
+    ~/.xbindkeysrc: xbindkeys/xbindkeysrc
+
+    ~/.xinitrc: xinit/xinitrc
+
+    ~/.config/Xmodmap:
+        create: true
+        path: xmodmap/Xmodmap
+
+    ~/.zshenv: zsh/zshenv
+    ~/.config/zsh/.zshrc:
+        create: true
+        path: zsh/zshrc
