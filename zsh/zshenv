@@ -6,3 +6,4 @@ export LESSHISTFILE="$HOME/.config/lesshst"
 export VIMPERATOR_INIT="source /home/martin/.config/vimperator/vimperatorrc"
 export VIMPERATOR_RUNTIME="/home/martin/.config/vimperator"
 export GCC_COLORS=1
+export XDG_CONFIG_HOME=$HOME/.config
