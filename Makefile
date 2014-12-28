@@ -3,8 +3,7 @@ LN = ln -s
 
 .PHONY: install
 install: \
-    keyboard \
-    vimperator
+    keyboard
 
 ### keyboard:
 keyboard: \
@@ -16,10 +15,4 @@ keyboard: \
 
 /usr/share/X11/xkb/symbols/fr_perso:
 	$(LN) $(PWD)/keyboard/fr_perso $@
-
-### vimperator:
-vimperator: $(HOME)/.config/vimperator/interwiki.py
-
-/usr/bin/interwiki: vimperator/interwiki.py
-	cp $(PWD)/vimperator/interwiki.py $@
 
