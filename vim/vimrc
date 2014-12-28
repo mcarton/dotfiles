@@ -14,7 +14,6 @@
         Plugin 'gmarik/vundle'
         Plugin 'javacomplete'
         Plugin 'LanguageTool'
-        " Plugin 'http://git.code.sf.net/p/vim-latex/vim-latex'
         " annoyingly too slow
         " Plugin 'mhinz/vim-signify'
         Plugin 'scrooloose/syntastic'
@@ -63,16 +62,6 @@
     au FileType c,cpp setlocal comments-=:// comments+=f://
 
     set path+=include
-
-" for vim latex
-    filetype plugin on
-    let g:tex_flavor='latex'
-    let g:Tex_DefaultTargetFormat='pdf'
-    let g:Tex_FoldedSections='part,chapter,section,%%fakesection'
-    let g:Tex_FoldedEnvironments=''
-    let g:Tex_FoldedCommands=''
-    let g:Tex_FoldedMisc=''
-    let g:Tex_GotoError=0
 
 " for java
     autocmd Filetype java setlocal omnifunc=javacomplete#Complete
