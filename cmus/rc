@@ -1,1 +1,12 @@
 view 2
+set format_current= %a - %l - %t - %X - %d%= %f
+set format_playlist= %-30%a %t%= %g %{?y?%y?    } %{?X!=0?%3X?   } %d 
+set format_playlist_va=
+set lib_sort=artist date album discnumber tracknumber title filename
+set play_sorted=true
+set repeat=true
+set show_remaining_time=true
+set shuffle=true
+bind -f common B player-prev
+bind -f common q win-add-q
+bind -f common space player-pause
