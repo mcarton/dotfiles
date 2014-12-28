@@ -2,29 +2,32 @@
     set nocompatible       " be iMproved
     filetype off           " required!
 
-    set runtimepath+=~/.vim/bundle/Vundle.vim
-    call vundle#begin()
+    let g:HasVundle = !empty(glob(expand("~") . "/.vim/bundle/Vundle.vim/*"))
+    if g:HasVundle
+        set runtimepath+=~/.vim/bundle/Vundle.vim
+        call vundle#begin()
 
-    Plugin 'Lokaltog/powerline'
-    Plugin 'SirVer/ultisnips'
-    Plugin 'Valloric/YouCompleteMe'
-    Plugin 'ervandew/supertab'
-    Plugin 'gmarik/vundle'
-    Plugin 'javacomplete'
-    Plugin 'LanguageTool'
-    " Plugin 'http://git.code.sf.net/p/vim-latex/vim-latex'
-    " annoyingly too slow
-    " Plugin 'mhinz/vim-signify'
-    Plugin 'scrooloose/syntastic'
-    Plugin 'terryma/vim-expand-region'
-    Plugin 'tpope/vim-commentary'
-    Plugin 'tpope/vim-endwise'
-    Plugin 'tpope/vim-liquid'
-    Plugin 'tpope/vim-sensible'
-    Plugin 'YankRing.vim'
-    Plugin 'yegappan/mru'
+        Plugin 'Lokaltog/powerline'
+        Plugin 'SirVer/ultisnips'
+        Plugin 'Valloric/YouCompleteMe'
+        Plugin 'ervandew/supertab'
+        Plugin 'gmarik/vundle'
+        Plugin 'javacomplete'
+        Plugin 'LanguageTool'
+        " Plugin 'http://git.code.sf.net/p/vim-latex/vim-latex'
+        " annoyingly too slow
+        " Plugin 'mhinz/vim-signify'
+        Plugin 'scrooloose/syntastic'
+        Plugin 'terryma/vim-expand-region'
+        Plugin 'tpope/vim-commentary'
+        Plugin 'tpope/vim-endwise'
+        Plugin 'tpope/vim-liquid'
+        Plugin 'tpope/vim-sensible'
+        Plugin 'YankRing.vim'
+        Plugin 'yegappan/mru'
 
-    call vundle#end()
+        call vundle#end()
+    end
 
 " set <leader> key to a more azerty-friendly key (must appear before any
 " mapping using it)
