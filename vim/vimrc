@@ -28,6 +28,11 @@
         call vundle#end()
     end
 
+" For syntastic
+    " deactivate lacheck as it is most often annoying, usually redundant with
+    " chktex and has no per-check deactivation option
+    let g:syntastic_tex_checkers = ['chktek']
+
 " set <leader> key to a more azerty-friendly key (must appear before any
 " mapping using it)
     let mapleader = ","
