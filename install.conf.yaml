@@ -37,3 +37,6 @@
     ~/.config/zsh/.zshrc:
         create: true
         path: zsh/zshrc
+    ~/.config/zsh/.zprofile:
+        create: true
+        path: zsh/zprofile
