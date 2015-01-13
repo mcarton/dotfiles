@@ -76,7 +76,7 @@
     autocmd Filetype htlm,css set sw=2
 
 " spell checking and wrapping in some file types
-    autocmd Filetype gitcommit set spell textwidth=72
+    autocmd Filetype gitcommit set spell textwidth=72 nofoldenable
     autocmd Filetype mkd,liquid,tex set spell textwidth=80
 
 " egg
