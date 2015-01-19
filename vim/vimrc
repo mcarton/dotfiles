@@ -108,10 +108,17 @@ vnoremap <Down> gj
 
 " toggle spell lang
 function! ToggleSpell()
-    if &spelllang =~# 'en'
-        set spelllang=fr
-    else
+    if &spell == 0
+        set spell
         set spelllang=en
+        echo 'spelllang=en'
+    elseif &spelllang =~# 'en'
+        set spell
+        set spelllang=fr
+        echo 'spelllang=fr'
+    elseif &spelllang =~# 'fr'
+        set nospell
+        echo 'nospell'
     endif
 endfunction
 
