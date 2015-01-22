@@ -5,8 +5,8 @@ xkb_symbols "yesdeadkeys" {
     name[Group1]="French";
 
     key <AE02>	{ [ dead_acute,          2,   asciitilde,    oneeighth ]	};
-    key <AE07>	{ [ dead_grave,          7,        grave, seveneighths ]	};
-    key <AC11>	{ [  backslash,    percent, dead_circumflex, dead_caron]	};
+    key <AE07>	{ [  backslash,          7,        grave, seveneighths ]	};
+    key <AC11>	{ [ dead_grave,    percent, dead_circumflex, dead_caron]	};
 
     include "level3(ralt_switch)"
 };
