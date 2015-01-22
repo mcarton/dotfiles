@@ -24,6 +24,9 @@
     ~/.vim/vimrc:
         create: true
         path: vim/vimrc
+    ~/.vim/bundle/vundle:
+        create: true
+        path: ./vim/Vundle.vim
 
     ~/.config/vimperator/vimperatorrc:
         create: true

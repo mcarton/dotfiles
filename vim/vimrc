@@ -2,9 +2,9 @@
     set nocompatible       " be iMproved
     filetype off           " required!
 
-    let g:HasVundle = !empty(glob(expand("~") . "/.vim/bundle/Vundle.vim/*"))
+    let g:HasVundle = !empty(glob(expand("~") . "/.vim/bundle/vundle/*"))
     if g:HasVundle
-        set runtimepath+=~/.vim/bundle/Vundle.vim
+        set runtimepath+=~/.vim/bundle/vundle
         call vundle#begin()
 
         Plugin 'LanguageTool'
