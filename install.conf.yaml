@@ -17,6 +17,10 @@
         create: true
         path: git
 
+    ~/.config/terminator/config:
+        create: true
+        path: terminator/config
+
     ~/.vim/vimrc:
         create: true
         path: vim/vimrc
