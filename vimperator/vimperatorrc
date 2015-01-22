@@ -14,7 +14,9 @@ nnoremap gt <C-^>
 let mapleader = ","
 
 command -nargs=0 interwiki javascript interwiki()
+command -nargs=0 viewsource javascript view_source()
 nnoremap <leader>z :interwiki<cr>
+nnoremap <leader>s :viewsource<cr>
 nnoremap <leader>gd :tabduplicate<cr>
 
 js << EOF
@@ -26,3 +28,8 @@ js << EOF
     }
 EOF
 
+js << EOF
+    function view_source() {
+        content.location.href.prepend('view-source:')
+    }
+EOF
