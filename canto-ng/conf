@@ -1,0 +1,240 @@
+{
+    "CantoCurses": {
+        "kill_daemon_on_exit": false,
+        "reader": {
+            "enumerate_links": true,
+            "show_description": true
+        },
+        "story": {
+            "enumerated": false
+        },
+        "taglist": {
+            "tags_enumerated": true
+        },
+        "tagorder": [
+            "maintag:Abstruse Goose",
+            "maintag:Andrzej's C++ blog",
+            "maintag:Arch Linux: Recent news updates",
+            "maintag:Arch Linux: Releases",
+            "maintag:Bartosz Milewski's Programming Cafe",
+            "maintag:Boost Downloads",
+            "maintag:Canto",
+            "maintag:Liberation - A la une sur Libération",
+            "maintag:Code De Porc",
+            "maintag:CommitStrip",
+            "maintag:Developpez.com C++",
+            "maintag:Dilbert Daily Strip",
+            "maintag:Dr. Dobb's Blogs",
+            "maintag:Drink a lol",
+            "maintag:Eric Niebler",
+            "maintag:Growing up",
+            "maintag:HTeuMeuLeu",
+            "maintag:Hmm-le-rss",
+            "maintag:Humeurs illustrées",
+            "maintag:Clubic",
+            "maintag:LinuxFr.org : les dépêches",
+            "maintag:LinuxFr.org : les journaux",
+            "maintag:Oh le joli bug !",
+            "maintag:Portail BDE",
+            "maintag:Preshing on Programming",
+            "maintag:Ranting @ 741 MHz",
+            "maintag:Recent Commits to canto-curses:master",
+            "maintag:Recent Commits to canto-next:master",
+            "maintag:Recent Commits to cmus:master",
+            "maintag:Spiked Math",
+            "maintag:Standard C++ | News",
+            "maintag:Standard C++ | Standardization",
+            "maintag:Tales of C++",
+            "maintag:The View from Aristeia",
+            "maintag:The coding love",
+            "maintag:Trevor Jim",
+            "maintag:What If?",
+            "maintag:n7",
+            "maintag:sebsauvage.net",
+            "maintag:xkcd",
+            "maintag:xkcd/blog",
+            "maintag:LLVM Project Blog"
+        ]
+    },
+    "defaults": {
+        "global_transform": "filter_read",
+        "keep_time": 86400,
+        "keep_unread": false,
+        "rate": 10
+    },
+    "feeds": [
+        {
+            "name": "Abstruse Goose",
+            "url": "http://abstrusegoose.com/feed.xml"
+        },
+        {
+            "name": "Andrzej's C++ blog",
+            "url": "http://akrzemi1.wordpress.com/feed/"
+        },
+        {
+            "name": "Arch Linux: Recent news updates",
+            "url": "https://www.archlinux.org/feeds/news/"
+        },
+        {
+            "name": "Arch Linux: Releases",
+            "url": "https://www.archlinux.org/feeds/releases/"
+        },
+        {
+            "name": "Bartosz Milewski's Programming Cafe",
+            "url": "http://bartoszmilewski.com/feed/"
+        },
+        {
+            "name": "Boost Downloads",
+            "url": "http://www.boost.org/feed/downloads.rss"
+        },
+        {
+            "name": "Canto",
+            "url": "http://codezen.org/canto-ng/feed/"
+        },
+        {
+            "name": "Clubic",
+            "url": "http://com.clubic.feedsportal.com/c/33464/f/581979/index.rss"
+        },
+        {
+            "name": "Code De Porc",
+            "url": "http://code-de-porc.tumblr.com/rss"
+        },
+        {
+            "name": "CommitStrip",
+            "url": "http://www.commitstrip.com/fr/feed/"
+        },
+        {
+            "name": "Developpez.com C++",
+            "url": "http://cpp.developpez.com/index/rss"
+        },
+        {
+            "name": "Dilbert Daily Strip",
+            "url": "http://feed.dilbert.com/dilbert/daily_strip?format=xml"
+        },
+        {
+            "name": "Dr. Dobb's Blogs",
+            "url": "http://www.drdobbs.com/rss/blogs"
+        },
+        {
+            "name": "Drink a lol",
+            "url": "http://drinkalol.blogspot.com/feeds/posts/default"
+        },
+        {
+            "name": "Eric Niebler",
+            "url": "http://ericniebler.com/feed/"
+        },
+        {
+            "name": "Growing up",
+            "url": "http://marcoarena.wordpress.com/feed/"
+        },
+        {
+            "name": "HTeuMeuLeu",
+            "url": "http://www.hteumeuleu.fr/feed/"
+        },
+        {
+            "name": "Hmm-le-rss",
+            "url": "http://hmm-la-bd.eu/rss/"
+        },
+        {
+            "name": "Humeurs illustrées",
+            "url": "http://feeds.feedburner.com/lucdamas/humeurs?format=xml"
+        },
+        {
+            "name": "Liberation - A la une sur Libération",
+            "url": "http://liberation.fr.feedsportal.com/c/32268/fe.ed/rss.liberation.fr/rss/latest/"
+        },
+        {
+            "name": "LinuxFr.org : les dépêches",
+            "url": "http://linuxfr.org/news.atom"
+        },
+        {
+            "name": "LinuxFr.org : les journaux",
+            "url": "http://linuxfr.org/journaux.atom"
+        },
+        {
+            "name": "Oh le joli bug !",
+            "url": "http://oh-le-joli-bug.tumblr.com/rss"
+        },
+        {
+            "name": "Portail BDE",
+            "url": "https://www.bde.enseeiht.fr/rss"
+        },
+        {
+            "name": "Preshing on Programming",
+            "url": "http://preshing.com/feed"
+        },
+        {
+            "name": "Ranting @ 741 MHz",
+            "url": "http://741mhz.com/atom.xml"
+        },
+        {
+            "name": "Recent Commits to canto-curses:master",
+            "url": "https://github.com/themoken/canto-curses/commits/master.atom"
+        },
+        {
+            "name": "Recent Commits to canto-next:master",
+            "url": "https://github.com/themoken/canto-next/commits/master.atom"
+        },
+        {
+            "name": "Recent Commits to cmus:master",
+            "url": "https://github.com/cmus/cmus/commits/master.atom"
+        },
+        {
+            "name": "Spiked Math",
+            "url": "http://feeds.feedburner.com/SpikedMath?format=xml"
+        },
+        {
+            "name": "Standard C++ | News",
+            "url": "http://isocpp.org/blog/rss/category/news"
+        },
+        {
+            "name": "Standard C++ | Standardization",
+            "url": "http://www.isocpp.org/blog/rss/category/standardization"
+        },
+        {
+            "name": "Tales of C++",
+            "url": "http://talesofcpp.fusionfenix.com/feed/"
+        },
+        {
+            "name": "The View from Aristeia",
+            "url": "http://scottmeyers.blogspot.com/feeds/posts/default"
+        },
+        {
+            "name": "The coding love",
+            "url": "http://thecodinglove.com/rss"
+        },
+        {
+            "name": "Trevor Jim",
+            "url": "http://trevorjim.com/feed.xml"
+        },
+        {
+            "name": "What If?",
+            "url": "http://what-if.xkcd.com/feed.atom"
+        },
+        {
+            "name": "n7",
+            "url": "http://www.enseeiht.fr/plugins/web/zoneItem/75887092-64d8-4196-b5e1-80d8c089f186/rss.xml"
+        },
+        {
+            "name": "sebsauvage.net",
+            "url": "http://sebsauvage.net/rss/updates.xml"
+        },
+        {
+            "name": "xkcd",
+            "url": "http://xkcd.com/atom.xml"
+        },
+        {
+            "name": "xkcd/blog",
+            "url": "http://blog.xkcd.com/feed/"
+        },
+        {
+            "name": "LLVM Project Blog",
+            "url": "http://blog.llvm.org/feeds/posts/default"
+        }
+    ],
+    "tags": {
+        "maintag:Liberation - A la une sur Libération": {
+            "collapsed": false
+        }
+    }
+}

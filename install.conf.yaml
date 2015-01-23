@@ -9,6 +9,10 @@
         create: true
         path: awesome/rc.lua
 
+    ~/.config/canto-ng/conf:
+        create: true
+        path: canto-ng/conf
+
     ~/.config/cmus/rc:
         create: true
         path: cmus/rc
@@ -26,7 +30,7 @@
         path: vim/vimrc
     ~/.vim/bundle/vundle:
         create: true
-        path: ./vim/Vundle.vim
+        path: vim/Vundle.vim
 
     ~/.config/vimperator/vimperatorrc:
         create: true
