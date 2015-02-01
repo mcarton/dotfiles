@@ -1,2 +1,22 @@
+# C++
+*.o
+
+# LaTeX
+*-converted-to.*
+*.aux
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.pdf
+*.snm
 *.swp
+*.toc
+*.vrb
+
+# Vim
 *.swo
+*.swp
