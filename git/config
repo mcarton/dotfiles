@@ -25,5 +25,5 @@
     quotepath = false
 
 [diff "image"]
-    command = ~/.config/git/img-diff
+    command = ~/programs/scripts/img-diff
 
