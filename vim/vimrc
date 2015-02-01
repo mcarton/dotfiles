@@ -27,23 +27,17 @@
         call vundle#end()
     end
 
+" Set <leader> key to a more azerty-friendly key (must appear before any
+" mapping using it)
+    let mapleader = ","
+
 " For syntastic
     " deactivate lacheck as it is most often annoying, usually redundant with
     " chktex and has no per-check deactivation option
     let g:syntastic_tex_checkers = ['chktek']
 
-" set <leader> key to a more azerty-friendly key (must appear before any
-" mapping using it)
-    let mapleader = ","
-
 " terryma/vim-expand-region default mapping for shrink is _
     map - <Plug>(expand_region_shrink)
-
-" for signify
-    " let g:signify_vcs_list = [ 'git' ]
-
-" for ycm
-    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py'
 
 " for ultisnips
     " If you want :UltiSnipsEdit to split your window.
@@ -55,6 +49,7 @@
     let g:SuperTabDefaultCompletionType = '<C-n>'
 
 " for C++
+    let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py'
     let g:syntastic_cpp_compiler_options='-std=c++1y'
     let g:ycm_complete_in_comments=1
     let g:ycm_confirm_extra_conf=0
@@ -82,12 +77,6 @@
 
 " llvm ir code
     autocmd BufNewFile,BufRead *.ll set filetype=llvm
-
-" cités
-    autocmd BufNewFile,BufRead vocabulary.cités set filetype=cités
-
-" why3
-    autocmd BufNewFile,BufRead *.why,*.mlw set filetype=why3
 
 " latex
     autocmd BufNewFile,BufRead *.tex set suffixes+=*.aux,*.fdb_latexmk,*.fls,*.log,*.out,*.toc
@@ -125,17 +114,17 @@ endfunction
 noremap <leader>z <ESC>:call ToggleSpell()<CR>
 
 " other stuffs
+    filetype plugin indent on
+    set cpoptions+="#"
+    set expandtab
+    set foldmethod=marker
+    set gdefault                    " makes :s///g default
+    set guioptions-=lLrRT
     set mouse=a
-    " set mousefocus                " would be great but only work in the gui
     set number
     set shiftwidth=4
-    set expandtab
-    set guioptions-=lLrRT
-    set cpoptions+="#"
-    syntax on
-    filetype plugin indent on
-    set foldmethod=marker
     set showcmd                     " show partial commands
+    syntax on
 
     " set split bar to be contiguous (there is an unbreakable space at the end
     " of that line — vim does not like classic space here)
@@ -145,12 +134,8 @@ noremap <leader>z <ESC>:call ToggleSpell()<CR>
     set colorcolumn=81,91,101
     hi ColorColumn ctermbg=lightgrey
 
-    " makes :s///g default
-    set gdefault
-
     " close quick fix list on selection
     autocmd FileType qf nmap <buffer> <cr> <cr>:ccl<cr>
-
 
     nnoremap <leader>m :!make<cr>
     nnoremap <leader>w <c-w>
