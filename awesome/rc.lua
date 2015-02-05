@@ -35,8 +35,8 @@ end
 -- }}}
 
 -- {{{ Variable definitions
--- Themes define colours, icons, font and wallpapers
-beautiful.init("./.config/awesome/themes/default/theme.lua")
+-- Themes define colours, icons, font and wallpapers.
+ beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator"
@@ -72,8 +72,8 @@ local layouts =
 -- Define a tag table which hold all screen tags.
 tags = {
   names = { "1", "2", "3", "4", "5", "6", "7", "8", "9", "a", "b" },
-  layout = { layouts[8], layouts[8], layouts[2], 
-             layouts[2], layouts[2], layouts[2], 
+  layout = { layouts[8], layouts[8], layouts[2],
+             layouts[2], layouts[2], layouts[2],
              layouts[2], layouts[2], layouts[2],
              layouts[2], layouts[2]
            }
@@ -268,7 +268,7 @@ globalkeys = awful.util.table.join(
                   awful.util.eval, nil,
                   awful.util.getdir("cache") .. "/history_eval")
               end),
-    awful.key({ modkey }, "f", function () awful.util.spawn_with_shell("GTK2_RC_FILES=/home/martin/.config/gtk-2.0/gtkrc firefox") end),
+    awful.key({ modkey }, "f", function () awful.util.spawn_with_shell("firefox") end),
     awful.key({ modkey }, "n", function () awful.util.spawn_with_shell("nautilus --no-desktop") end)
 )
 
@@ -356,14 +356,21 @@ awful.rules.rules = {
                      keys = clientkeys,
                      size_hints_honor = false,
                      buttons = clientbuttons } },
-    { rule = { class = "Empathy" }, properties = { tag = tags[1][3] } }
 }
 -- }}}
 
 -- {{{ Signals
 -- Signal function to execute when a new client appears.
-client.connect_signal("manage", function (c)
-    if not awesome.startup then
+client.connect_signal("manage", function (c, startup)
+    -- Enable sloppy focus
+    c:connect_signal("mouse::enter", function(c)
+        if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
+            and awful.client.focus.filter(c) then
+            client.focus = c
+        end
+    end)
+
+    if not startup then
         -- Set the windows at the slave,
         -- i.e. put it at the end of others instead of setting it master.
         -- awful.client.setslave(c)
@@ -421,15 +428,6 @@ client.connect_signal("manage", function (c)
     end
 end)
 
--- Enable sloppy focus
-client.connect_signal("mouse::enter", function(c)
-    if awful.layout.get(c.screen) ~= awful.layout.suit.magnifier
-        and awful.client.focus.filter(c) then
-        client.focus = c
-    end
-end)
-
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
-
