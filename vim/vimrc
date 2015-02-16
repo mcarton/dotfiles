@@ -95,6 +95,9 @@ vnoremap <Up>   gk
 nnoremap <Down> gj
 vnoremap <Down> gj
 
+" toggle line numbers
+nnoremap <silent><Leader>n :set relativenumber!<CR>
+
 " toggle spell lang
 function! ToggleSpell()
     if &spell == 0
