@@ -79,7 +79,7 @@
     autocmd BufNewFile,BufRead *.ll set filetype=llvm
 
 " latex
-    autocmd BufNewFile,BufRead *.tex set suffixes+=*.aux,*.fdb_latexmk,*.fls,*.log,*.out,*.toc
+    autocmd BufNewFile,BufRead *.tex set suffixes+=*.aux,*.pdf,*.fdb_latexmk,*.fls,*.log,*.out,*.toc
 
 " Flag problematic whitespace (trailing spaces, spaces before tabs).
 highlight BadWhitespace term=standout ctermbg=red guibg=red
