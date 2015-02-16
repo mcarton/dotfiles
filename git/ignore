@@ -16,6 +16,8 @@
 *.swp
 *.toc
 *.vrb
+_minted-language
+_minted-report
 
 # Vim
 *.swo
