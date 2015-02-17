@@ -1,0 +1,18 @@
+priority -50
+extends c
+
+# We want to overwrite everything in parent ft.
+priority -49
+
+snippet tp "template <typename .. (template)"
+template <typename ${1:_InputIter}
+endsnippet
+
+snippet usbe "using std::begin; using std::end;"
+using std::begin; using std::end;
+$1
+endsnippet
+
+snippet cout "std::cout"
+std::cout
+endsnippet

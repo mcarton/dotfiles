@@ -28,6 +28,9 @@
     ~/.vim/vimrc:
         create: true
         path: vim/vimrc
+    ~/.vim/UltiSnips:
+        create: true
+        path: vim/UltiSnips
     ~/.vim/bundle/vundle:
         create: true
         path: vim/Vundle.vim

@@ -1,0 +1,14 @@
+snippet hg "Insert a header gard" b
+#ifndef H_${1:`uuidgen | sed -e s/-/_/g`}
+#define H_$1
+
+$0
+
+#endif
+
+endsnippet
+
+snippet inc "#include"
+#include $1
+endsnippet
+
