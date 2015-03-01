@@ -60,3 +60,8 @@
     ~/.config/zsh/git-prompt:
         create: true
         path: zsh/zsh-git-prompt
+
+- shell:
+    - ["mkdir -p ~/.vim/spell", ""]
+    - ["wget http://ftp.vim.org/vim/runtime/spell/fr.utf-8.spl -O ~/.vim/spell/fr.utf-8.spl", ""]
+    - ["wget http://ftp.vim.org/vim/runtime/spell/fr.utf-8.sug -O ~/.vim/spell/fr.utf-8.sug", ""]
