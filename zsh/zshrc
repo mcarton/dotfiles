@@ -89,6 +89,8 @@ alias skype='xhost +local: && sudo -u skype /usr/bin/skype'
 alias canto-daemon='canto-daemon -D ~/.config/canto-ng'
 alias canto-curses='canto-curses -D ~/.config/canto-ng'
 alias canto-remote='canto-remote -D ~/.config/canto-ng'
+alias fuck='sudo $(fc -ln -1)'
+alias fucking='sudo'
 
 ### Add color to man pages
 man() {
