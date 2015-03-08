@@ -22,8 +22,9 @@ compinit
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' verbose yes
 
-### Ignores duplicates in histfile
-setopt HIST_IGNORE_ALL_DUPS
+### Histfile
+setopt HIST_IGNORE_ALL_DUPS # Ignores duplicates in histfile
+setopt histignorespace      # Don't record commands starting with a space
 
 ### Improve 
 # see http://superuser.com/questions/378018/how-can-i-do-ctrl-z-and-bg-in-one-keypress-to-make-process-continue-in-backgroun#answer-378045
