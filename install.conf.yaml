@@ -60,6 +60,9 @@
     ~/.config/zsh/git-prompt:
         create: true
         path: zsh/zsh-git-prompt
+    ~/.config/zsh/completion:
+        create: true
+        path: zsh/completion
 
 - shell:
     - ["mkdir -p ~/.vim/spell", ""]
