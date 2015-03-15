@@ -16,8 +16,7 @@ local helpers = require("vicious.helpers")
 -- vicious.widgets.cmus
 local cmus = {}
 
-
--- {{{ MPD widget type
+-- {{{ cmus widget type
 local function worker(format, warg)
     local cmus_state  = {
         ["{album}"]  = "N/A",
