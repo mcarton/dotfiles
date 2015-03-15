@@ -82,7 +82,7 @@
     autocmd BufNewFile,BufRead *.tex set suffixes+=*.aux,*.pdf,*.fdb_latexmk,*.fls,*.log,*.out,*.toc sw=2
 
 " evolution
-    autocmd BufRead /tmp/evo* set spell filetype=md
+    autocmd BufRead /tmp/evo* set spell filetype=markdown
 
 " Flag problematic whitespace (trailing spaces, spaces before tabs).
 highlight BadWhitespace term=standout ctermbg=red guibg=red
