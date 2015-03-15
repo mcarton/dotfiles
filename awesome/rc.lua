@@ -8,6 +8,9 @@ local wibox = require("wibox")
 local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
+local vicious = require("vicious")
+local hover = require('hover')
+local helpers = require("vicious.helpers")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -36,7 +39,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
- beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init(awful.util.getdir("config") .. "/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "terminator"
@@ -105,14 +108,143 @@ mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
 -- }}}
 
 -- {{{ Wibox
--- Create a fraxbat (battery) widget
-require('fraxbat')
-myfraxbatwidget = fraxbat.getFraxbatWidget(120)
+
+-- Volume Widget
+myvolwidget = wibox.widget.textbox()
+local stereo = require('stereo')
+vicious.register(myvolwidget, stereo, "♫${mute}${volume}%", 11, 'Master')
+local cmus = require('cmus')
+hover.install{
+    widget=myvolwidget, box={},
+    enter=function()
+        result = '<b>Global:</b>\n'
+              .. 'Left:  ${left} <b>${lmute}</b>\n'
+              .. 'Right: ${right} <b>${rmute}</b>\n\n'
+              .. '<b>cmus:</b> ${status}\n'
+              .. 'Artist: ${artist}\n'
+              .. 'Title:  ${title}\n'
+              .. 'Album:  ${album}\n'
+              .. 'Genre:  ${genre}\n'
+              .. 'Artist: ${artist}\n'
+              .. 'Volume: ${vol_left} — ${vol_right}\n'
+              .. 'File:   ${file}'
+
+        result = helpers.format(result, stereo('', 'Master'))
+        result = helpers.format(result, cmus())
+        return result
+    end
+}
+
+-- Battery widget
+mybatwidget = wibox.widget.textbox()
+vicious.register(
+    mybatwidget, vicious.widgets.bat,
+    function (widget, args)
+        -- args = {state, percent, time, wear}
+        local state, percent, time, wear = unpack(args)
+        r = '↯'
+
+        if time ~= 'N/A' and state ~= '+' then
+            r = r .. '<span color="red">-</span>'
+        end
+
+        if percent < 15 then
+                r = r .. '<span color="red">' .. percent .. '</span>'
+        elseif	percent < 25 then
+                r = r .. '<span color="orange">' .. percent .. '</span>'
+        elseif  percent < 35 then
+                r = r .. '<span color="yellow">' .. percent .. '</span>'
+        else
+                r = r .. percent
+        end
+
+        r = r .. '%'
+
+        -- notification if need to load
+        if state == '-' and percent < 15 then
+            naughty.notify{
+                preset = naughty.config.presets.critical,
+                title = "Low battery!",
+                text = "Battery is very low!",
+                timeout = 5
+            }
+        end
+
+        return r
+    end,
+    97, 'BAT0'
+)
+hover.install{
+    widget=mybatwidget, box={},
+    enter=function ()
+        local state, percent, time, wear = unpack(vicious.widgets.bat(nil, 'BAT0'))
+        return string.format(
+            'State    : %5s\nPercent  : %5s\nTime     : %5s\nWear     : %5s',
+            state, percent .. '%', time, wear .. '%'
+        )
+    end
+}
+
+-- Network Widget
+mynetwidget = wibox.widget.textbox()
+vicious.register(mynetwidget, vicious.widgets.net,
+    function (widget, args)
+        r = ''
+        if args['{enp3s0f1 carrier}'] == 1 then
+            r = r .. '☎'
+        end
+        if args['{wlp2s0 carrier}'] == 1 then
+            r = r .. '⚑'
+        end
+        return r
+    end, 17
+)
+
+-- CPU Temperature Widget
+local function color_temp(temp)
+    if temp < 61 then
+        return temp
+    elseif  temp < 76 then
+        return '<span color="orange">' .. temp .. '</span>'
+    else
+        return '<span color="red">'    .. temp .. '</span>'
+    end
+end
+
+local temp = require('temp')
+mytempwidget = wibox.widget.textbox()
+vicious.register(mytempwidget, temp,
+    function (widget, args)
+        return color_temp(args.physical.current) .. '°C'
+    end, 61
+)
+hover.install{
+    widget=mytempwidget, box={},
+    enter=function ()
+        temps = temp()
+        return string.format(
+            "%-15s: %s°C\n%-15s: %s°C\n%-15s: %s°C",
+            temps.physical.name, color_temp(temps.physical.current),
+            temps.core0.name, color_temp(temps.core0.current),
+            temps.core1.name, color_temp(temps.core1.current)
+        )
+    end
+}
 
 -- Create a textclock widget
-mytextclock = awful.widget.textclock()
-require('calendar2')
-calendar2.addCalendarToWidget(mytextclock)
+mytextclock = awful.widget.textclock("%a %b %d, %H:%M")
+calendar = require('calendar')
+calendar.currentdate = nil
+hover.install{
+    widget=mytextclock, box={},
+    enter=calendar.displayer(calendar),
+    buttons = {
+        { modifier={         }, button=3, fn=calendar.displayer(calendar, - 1) },
+        { modifier={         }, button=1, fn=calendar.displayer(calendar,   1) },
+        { modifier={ 'Shift' }, button=3, fn=calendar.displayer(calendar, -12) },
+        { modifier={ 'Shift' }, button=1, fn=calendar.displayer(calendar,  12) },
+    }
+}
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -193,7 +325,22 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
-    right_layout:add(myfraxbatwidget)
+
+    mywidgets = {
+        mytempwidget,
+        myvolwidget,
+        mynetwidget,
+        mybatwidget,
+    }
+
+    separator = wibox.widget.textbox()
+    separator:set_text('|')
+
+    for i = 1, #mywidgets do
+        right_layout:add(mywidgets[i])
+        right_layout:add(separator)
+    end
+
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 

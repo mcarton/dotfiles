@@ -1,13 +1,28 @@
 - link:
-    ~/.config/awesome/calendar2.lua:
+    ~/.config/awesome/calendar.lua:
         create: true
-        path: awesome/calendar2.lua
-    ~/.config/awesome/fraxbat.lua:
+        path: awesome/calendar.lua
+    ~/.config/awesome/cmus.lua:
         create: true
-        path: awesome/fraxbat.lua
+        path: awesome/cmus.lua
+    ~/.config/awesome/hover.lua:
+        create: true
+        path: awesome/hover.lua
     ~/.config/awesome/rc.lua:
         create: true
         path: awesome/rc.lua
+    ~/.config/awesome/stereo.lua:
+        create: true
+        path: awesome/stereo.lua
+    ~/.config/awesome/temp.lua:
+        create: true
+        path: awesome/temp.lua
+    ~/.config/awesome/theme.lua:
+        create: true
+        path: awesome/theme.lua
+    ~/.config/awesome/volume.lua:
+        create: true
+        path: awesome/volume.lua
 
     ~/.config/canto-ng/conf:
         create: true
