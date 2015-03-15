@@ -20,6 +20,9 @@
     ~/.config/awesome/theme.lua:
         create: true
         path: awesome/theme.lua
+    ~/.config/awesome/video.lua:
+        create: true
+        path: awesome/video.lua
     ~/.config/awesome/volume.lua:
         create: true
         path: awesome/volume.lua

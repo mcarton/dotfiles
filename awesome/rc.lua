@@ -231,6 +231,12 @@ hover.install{
     end
 }
 
+-- Video Widget
+myvideowidget = wibox.widget.textbox()
+myvideowidget:set_font('Symbola')
+local video = require('video')
+vicious.register(myvideowidget, video, "<span color='red'>${video}</span>", 7, '')
+
 -- Create a textclock widget
 mytextclock = awful.widget.textclock("%a %b %d, %H:%M")
 calendar = require('calendar')
@@ -331,6 +337,7 @@ for s = 1, screen.count() do
         myvolwidget,
         mynetwidget,
         mybatwidget,
+        myvideowidget,
     }
 
     separator = wibox.widget.textbox()
