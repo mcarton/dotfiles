@@ -233,7 +233,7 @@ hover.install{
 
 -- Video Widget
 myvideowidget = wibox.widget.textbox()
-myvideowidget:set_font('Symbola')
+myvideowidget:set_font('Symbola ' .. tostring(theme.fontsize))
 local video = require('video')
 vicious.register(myvideowidget, video, "<span color='red'>${video}</span>", 7, '')
 

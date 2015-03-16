@@ -4,7 +4,8 @@
 
 theme = {}
 
-theme.font          = "Deja Vu Sans Mono 8"
+theme.fontsize      = 8
+theme.font          = "Deja Vu Sans Mono " .. tostring(theme.fontsize)
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
