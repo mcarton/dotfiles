@@ -161,12 +161,12 @@ vicious.register(
         r = r .. '%'
 
         -- notification if need to load
-        if state == '-' and percent < 15 then
+        if state == '−' and percent < 15 then
             naughty.notify{
                 preset = naughty.config.presets.critical,
                 title = "Low battery!",
                 text = "Battery is very low!",
-                timeout = 5
+                timeout = 15
             }
         end
 
