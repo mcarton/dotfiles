@@ -200,6 +200,7 @@ vicious.register(mynetwidget, vicious.widgets.net,
         return r
     end, 17
 )
+hover.install{widget=mynetwidget, box={}}
 
 -- CPU Temperature Widget
 local function color_temp(temp)
@@ -241,11 +242,12 @@ vicious.register(myvideowidget, video,
         if args["{video}"] == 'V' then
             return "<span color='red'>\239\128\176</span>" -- fa-camera
         else
-            return ''
+            return ' '
         end
     end,
     7, ''
 )
+hover.install{widget=myvideowidget, box={}}
 
 -- Create a textclock widget
 mytextclock = awful.widget.textclock("%a %b %d, %H:%M")

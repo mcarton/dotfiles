@@ -28,10 +28,14 @@ function hover.install(arg)
     local widget = arg.widget
     local buttons = arg.buttons
 
+    arg.box = nil
+
     widget:connect_signal(
         'mouse::enter',
         function ()
-            arg.box = notify(arg.enter)
+            if arg.enter ~= nil then
+                arg.box = notify(arg.enter)
+            end
             vicious.force({ widget })
         end
     )
@@ -39,7 +43,9 @@ function hover.install(arg)
     widget:connect_signal(
         'mouse::leave',
         function ()
-            naughty.destroy(arg.box)
+            if arg.box ~= nil then
+                naughty.destroy(arg.box)
+            end
             vicious.force({ widget })
         end
     )
@@ -52,7 +58,9 @@ function hover.install(arg)
                 awful.button(
                     rule.modifier, rule.button,
                     function ()
-                        naughty.destroy(arg.box)
+                        if arg.box ~= nil then
+                            naughty.destroy(arg.box)
+                        end
                         arg.box = notify(rule.fn)
                     end
                 )
