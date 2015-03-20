@@ -14,7 +14,7 @@ local function worker(format, warg)
     video["{video}"] = ''
 
     if os.execute("ls /dev/video*") then
-        video["{video}"] = '⇻'
+        video["{video}"] = 'V'
     end
 
     return video

@@ -187,14 +187,15 @@ hover.install{
 
 -- Network Widget
 mynetwidget = wibox.widget.textbox()
+mynetwidget:set_font('fontawesome-webfont ' .. tostring(theme.fontsize))
 vicious.register(mynetwidget, vicious.widgets.net,
     function (widget, args)
         r = ''
         if args['{enp3s0f1 carrier}'] == 1 then
-            r = r .. '☎'
+            r = r .. '\239\135\166' -- fa-plug
         end
         if args['{wlp2s0 carrier}'] == 1 then
-            r = r .. '⚑'
+            r = r .. '\239\135\171' -- fa-wifi
         end
         return r
     end, 17
@@ -233,9 +234,18 @@ hover.install{
 
 -- Video Widget
 myvideowidget = wibox.widget.textbox()
-myvideowidget:set_font('Symbola ' .. tostring(theme.fontsize))
+myvideowidget:set_font('fontawesome-webfont ' .. tostring(theme.fontsize))
 local video = require('video')
-vicious.register(myvideowidget, video, "<span color='red'>${video}</span>", 7, '')
+vicious.register(myvideowidget, video,
+    function (widget, args)
+        if args["{video}"] == 'V' then
+            return "<span color='red'>\239\128\176</span>" -- fa-camera
+        else
+            return ''
+        end
+    end,
+    7, ''
+)
 
 -- Create a textclock widget
 mytextclock = awful.widget.textclock("%a %b %d, %H:%M")
