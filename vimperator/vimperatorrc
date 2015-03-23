@@ -30,6 +30,13 @@ EOF
 
 js << EOF
     function view_source() {
-        content.location.href.prepend('view-source:')
+        var s = ('view-source:').length;
+
+        if (content.location.href.slice(0, s) == 'view-source:') {
+            content.location.href = content.location.href.slice(s);
+        }
+        else {
+            content.location.href = 'view-source:' + content.location.href;
+        }
     }
 EOF
