@@ -3,22 +3,20 @@ set runtimepath=~/.config/vimperator
 hi StatusLine color: black;
 set gui=nonavigation
 
-nnoremap h H
+let mapleader = ","
+
+nnoremap <leader>gd :tabduplicate<cr>
+nnoremap <leader>s :myviewsource<cr>
+nnoremap <leader>z :interwiki<cr>
 nnoremap H h
-nnoremap l L
 nnoremap L l
 nnoremap gh gT
 nnoremap gl gt
 nnoremap gt <C-^>
-
-let mapleader = ","
+nnoremap h H
+nnoremap l L
 
 command -nargs=0 interwiki javascript interwiki()
-command -nargs=0 myviewsource javascript view_source()
-nnoremap <leader>z :interwiki<cr>
-nnoremap <leader>s :myviewsource<cr>
-nnoremap <leader>gd :tabduplicate<cr>
-
 js << EOF
     function interwiki() {
         url = io.system("interwiki", content.location.href)
@@ -28,6 +26,7 @@ js << EOF
     }
 EOF
 
+command -nargs=0 myviewsource javascript view_source()
 js << EOF
     function view_source() {
         var s = ('view-source:').length;
