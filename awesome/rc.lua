@@ -197,6 +197,9 @@ vicious.register(mynetwidget, vicious.widgets.net,
         if args['{wlp2s0 carrier}'] == 1 then
             r = r .. '\239\135\171' -- fa-wifi
         end
+        if r == ''  then
+            r = ' '
+        end
         return r
     end, 17
 )
