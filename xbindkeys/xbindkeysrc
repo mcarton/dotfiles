@@ -34,9 +34,17 @@
     m:0x10 + c:171
     Mod2 + XF86AudioNext
 
+"cmus-remote --next"
+    m:0x40 + c:72
+    Mod4 + F6
+
 "cmus-remote --prev"
     m:0x10 + c:173
     Mod2 + XF86AudioPrev
+
+"cmus-remote --prev"
+    m:0x40 + c:71
+    Mod4 + F5
 
 "xbacklight -inc 10"
     m:0x0 + c:233
