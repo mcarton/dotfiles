@@ -127,6 +127,8 @@ noremap <leader>z <ESC>:call ToggleSpell()<CR>
     set foldmethod=marker
     set gdefault                    " makes :s///g default
     set guioptions-=lLrRT
+    set list
+    set listchars=nbsp:¬,tab:→ 
     set mouse=a
     set number
     set shiftwidth=4
