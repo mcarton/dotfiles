@@ -17,6 +17,7 @@ flags = [
     '-stdlib=libc++',
     '-x', 'c++',
     '-I', '.',
+    '-I', 'include',
     '-isystem', '/usr/include/c++/v1',
     '-isystem', '/usr/include'
 ]
