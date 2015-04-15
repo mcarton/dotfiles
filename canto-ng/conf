@@ -19,9 +19,10 @@
             "maintag:Bartosz Milewski's Programming Cafe",
             "maintag:Boost Downloads",
             "maintag:Canto",
-            "maintag:Liberation - A la une sur Libération",
+            "maintag:Clubic",
             "maintag:Code De Porc",
             "maintag:CommitStrip",
+            "maintag:Debian Security"
             "maintag:Developpez.com C++",
             "maintag:Dilbert Daily Strip",
             "maintag:Dr. Dobb's Blogs",
@@ -31,7 +32,9 @@
             "maintag:HTeuMeuLeu",
             "maintag:Hmm-le-rss",
             "maintag:Humeurs illustrées",
-            "maintag:Clubic",
+            "maintag:LLVM Project Blog",
+            "maintag:Liberation - A la une sur Libération",
+            "maintag:Linux Magazine News (path: lmi_news)",
             "maintag:LinuxFr.org : les dépêches",
             "maintag:LinuxFr.org : les journaux",
             "maintag:Oh le joli bug !",
@@ -51,9 +54,9 @@
             "maintag:What If?",
             "maintag:n7",
             "maintag:sebsauvage.net",
+            "maintag:usevim",
             "maintag:xkcd",
             "maintag:xkcd/blog",
-            "maintag:LLVM Project Blog"
         ]
     },
     "defaults": {
@@ -104,6 +107,10 @@
             "url": "http://www.commitstrip.com/fr/feed/"
         },
         {
+            "name": "Debian Security",
+            "url": "https://www.debian.org/security/dsa"
+        },
+        {
             "name": "Developpez.com C++",
             "url": "http://cpp.developpez.com/index/rss"
         },
@@ -140,8 +147,16 @@
             "url": "http://feeds.feedburner.com/lucdamas/humeurs?format=xml"
         },
         {
-            "name": "Liberation - A la une sur Libération",
+            "name": "LLVM Project Blog",
+            "url": "http://blog.llvm.org/feeds/posts/default"
+        },
+        {
+            "name": "Liberation - À la une sur Libération",
             "url": "http://liberation.fr.feedsportal.com/c/32268/fe.ed/rss.liberation.fr/rss/latest/"
+        },
+        {
+            "name": "Linux Magazine News",
+            "url": "http://www.linux-magazine.com/rss/feed/lmi_news"
         },
         {
             "name": "LinuxFr.org : les dépêches",
@@ -220,21 +235,18 @@
             "url": "http://sebsauvage.net/rss/updates.xml"
         },
         {
+            "name": "usevim",
+            "url": "http://feeds.feedburner.com/usevim?format=xml"
+        },
+        {
             "name": "xkcd",
             "url": "http://xkcd.com/atom.xml"
         },
         {
             "name": "xkcd/blog",
             "url": "http://blog.xkcd.com/feed/"
-        },
-        {
-            "name": "LLVM Project Blog",
-            "url": "http://blog.llvm.org/feeds/posts/default"
         }
     ],
     "tags": {
-        "maintag:Liberation - A la une sur Libération": {
-            "collapsed": false
-        }
     }
 }
