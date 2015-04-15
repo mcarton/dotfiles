@@ -28,9 +28,6 @@ else:
 
 SOURCE_EXTENSIONS = [ '.cpp', '.hpp', '.tpp' ]
 
-def DirectoryOfThisScript():
-    return os.path.dirname(os.path.abspath(__file__))
-
 def MakeRelativePathsInFlagsAbsolute(flags, working_directory):
     if not working_directory:
         return flags
@@ -69,8 +66,7 @@ def FlagsForFile(filename):
                 compilation_info.compiler_flags_,
                 compilation_info.compiler_working_dir_)
     else:
-        relative_to = DirectoryOfThisScript()
-        final_flags = MakeRelativePathsInFlagsAbsolute(flags, relative_to)
+        final_flags = flags
 
     return {
         'flags': final_flags,
