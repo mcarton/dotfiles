@@ -22,7 +22,7 @@
             "maintag:Clubic",
             "maintag:Code De Porc",
             "maintag:CommitStrip",
-            "maintag:Debian Security"
+            "maintag:Debian Security",
             "maintag:Developpez.com C++",
             "maintag:Dilbert Daily Strip",
             "maintag:Dr. Dobb's Blogs",
@@ -56,7 +56,7 @@
             "maintag:sebsauvage.net",
             "maintag:usevim",
             "maintag:xkcd",
-            "maintag:xkcd/blog",
+            "maintag:xkcd/blog"
         ]
     },
     "defaults": {
