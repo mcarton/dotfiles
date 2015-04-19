@@ -15,6 +15,7 @@
         Plugin 'ervandew/supertab'
         Plugin 'gmarik/vundle'
         Plugin 'javacomplete'
+        Plugin 'pbrisbin/vim-mkdir'
         Plugin 'scrooloose/syntastic'
         Plugin 'terryma/vim-expand-region'
         Plugin 'tpope/vim-commentary'
