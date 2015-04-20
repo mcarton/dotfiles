@@ -11,7 +11,6 @@
         Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
         Plugin 'SirVer/ultisnips'
         Plugin 'Valloric/YouCompleteMe'
-        Plugin 'YankRing.vim'
         Plugin 'ervandew/supertab'
         Plugin 'gmarik/vundle'
         Plugin 'javacomplete'
