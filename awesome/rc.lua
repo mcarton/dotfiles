@@ -255,7 +255,6 @@ hover.install{widget=myvideowidget, box={}}
 -- Create a textclock widget
 mytextclock = awful.widget.textclock("%a %b %d, %H:%M")
 calendar = require('calendar')
-calendar.currentdate = nil
 hover.install{
     widget=mytextclock, box={},
     enter=calendar.timezones({

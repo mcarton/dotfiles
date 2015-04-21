@@ -14,7 +14,7 @@ local tostring = tostring
 
 module("calendar")
 
-local calendar = {}
+local calendar = {currentdate = nil}
 local current_day_format = string.format(
     '<span foreground="%s" background="%s">%s</span>',
     beautiful.fg_focus, beautiful.bg_focus, "%s"
