@@ -258,6 +258,14 @@ calendar = require('calendar')
 calendar.currentdate = nil
 hover.install{
     widget=mytextclock, box={},
+    enter=calendar.timezones({
+        {"UTC       ", "UTC"},
+        {"LA        ", "America/Los_Angeles"},
+        {"Martinique", "America/Martinique"},
+    })
+}
+hover.install{
+    widget=mytextclock, box={},
     enter=calendar.displayer(calendar),
     buttons = {
         { modifier={         }, button=3, fn=calendar.displayer(calendar, - 1) },

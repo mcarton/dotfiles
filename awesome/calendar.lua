@@ -5,10 +5,12 @@
 --   + transformed to module
 --   + the current day formating is customizable
 
+local beautiful = require("beautiful")
+local io = require("io")
 local os = os
+local pairs = pairs
 local string = string
 local tostring = tostring
-local beautiful = require("beautiful")
 
 module("calendar")
 
@@ -81,6 +83,26 @@ function calendar.displayer(c, delta)
         end
 
         return calendar.displayMonth(c.currentdate.month, c.currentdate.year)
+    end
+end
+
+function calendar.timezones(zones)
+    return function ()
+        result = nil
+
+        for _, zone in pairs(zones) do
+            local f = io.popen("TZ='" .. zone[2] .. "' date")
+
+            if result ~= nil then
+                result = result .. '\n' .. '<b>' .. zone[1] .. '</b>: ' .. f:read()
+            else
+                result = '<b>' .. zone[1] .. '</b>: ' .. f:read()
+            end
+
+            f:close()
+        end
+
+        return result
     end
 end
 
