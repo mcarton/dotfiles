@@ -1,0 +1,41 @@
+- link:
+    ~/.config/awesome/calendar.lua:
+        create: true
+        path: awesome/calendar.lua
+    ~/.config/awesome/cmus.lua:
+        create: true
+        path: awesome/cmus.lua
+    ~/.config/awesome/hover.lua:
+        create: true
+        path: awesome/hover.lua
+    ~/.config/awesome/rc.lua:
+        create: true
+        path: awesome/rc.lua
+    ~/.config/awesome/stereo.lua:
+        create: true
+        path: awesome/stereo.lua
+    ~/.config/awesome/temp.lua:
+        create: true
+        path: awesome/temp.lua
+    ~/.config/awesome/theme.lua:
+        create: true
+        path: awesome/theme.lua
+    ~/.config/awesome/video.lua:
+        create: true
+        path: awesome/video.lua
+    ~/.config/awesome/volume.lua:
+        create: true
+        path: awesome/volume.lua
+
+    ~/.config/terminator/config:
+        create: true
+        path: terminator/config
+
+    ~/.xbindkeysrc: xbindkeys/xbindkeysrc
+
+    ~/.xinitrc: xinit/xinitrc
+
+    ~/.config/Xmodmap:
+        create: true
+        path: xmodmap/Xmodmap
+

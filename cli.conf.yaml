@@ -1,0 +1,43 @@
+- link:
+    ~/.config/canto-ng/conf:
+        create: true
+        path: canto-ng/conf
+
+    ~/.config/cmus/rc:
+        create: true
+        path: cmus/rc
+
+    ~/.config/git:
+        create: true
+        path: git
+
+    ~/.vim/vimrc:
+        create: true
+        path: vim/vimrc
+    ~/.vim/UltiSnips:
+        create: true
+        path: vim/UltiSnips
+    ~/.vim/bundle/vundle:
+        create: true
+        path: vim/Vundle.vim
+    ~/.vim/bundle/YouCompleteMe/cpp/ycm_extra_conf.py:
+        create: true
+        path: vim/ycm_extra_conf.py
+
+    ~/.config/vimperator/vimperatorrc:
+        create: true
+        path: vimperator/vimperatorrc
+
+    ~/.zshenv: zsh/zshenv
+    ~/.config/zsh/.zshrc:
+        create: true
+        path: zsh/zshrc
+    ~/.config/zsh/.zprofile:
+        create: true
+        path: zsh/zprofile
+    ~/.config/zsh/git-prompt:
+        create: true
+        path: zsh/zsh-git-prompt
+    ~/.config/zsh/completion:
+        create: true
+        path: zsh/completion
