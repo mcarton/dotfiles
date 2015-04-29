@@ -2,12 +2,15 @@ PWD = $(shell pwd)
 LN = ln -s
 
 .PHONY: FORCE
-install: cli gui
+install: submodules cli gui
 
-cli: FORCE
+submodules: FORCE
+	git submodule update --init --recursive
+
+cli: submodules FORCE
 	${PWD}/dotbot/bin/dotbot -d "${PWD}" -c cli.conf.yaml
 
-gui: FORCE
+gui: submodules FORCE
 	${PWD}/dotbot/bin/dotbot -d "${PWD}" -c gui.conf.yaml
 
 ### keyboard:
