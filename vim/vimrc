@@ -57,6 +57,7 @@
     " disable autocomment for //
     au FileType c,cpp setlocal comments-=:// comments+=f://
     autocmd BufNewFile,BufRead *.tpp set filetype=cpp
+    autocmd BufNewFile,BufRead /usr/include/c++/* set filetype=cpp
 
     set path+=include
 
