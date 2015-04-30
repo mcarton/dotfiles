@@ -56,7 +56,7 @@ setopt prompt_subst
 autoload colors
 colors
 source ~/.config/zsh/git-prompt/zshrc.sh
-export PS1="%{$(tput bold)$(tput setf 1)%}⏜⊚⏝ %{${reset_color}%}@%m@%D{%H:%M:%S}@%{$(tput setf 2)%}%~%{$(tput setf 0)%}"'$(git_super_status)'"%# %{${reset_color}%}"
+export PS1="%{$(tput bold)$(tput setf 1)%}%n%{${reset_color}%}@%m@%D{%H:%M:%S}@%{$(tput setf 2)%}%~%{$(tput setf 0)%}"'$(git_super_status)'"%# %{${reset_color}%}"
 KEYTIMEOUT=1
 
 ### Vim-zsh
