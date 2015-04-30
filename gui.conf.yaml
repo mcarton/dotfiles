@@ -34,8 +34,3 @@
     ~/.xbindkeysrc: xbindkeys/xbindkeysrc
 
     ~/.xinitrc: xinit/xinitrc
-
-    ~/.config/Xmodmap:
-        create: true
-        path: xmodmap/Xmodmap
-
