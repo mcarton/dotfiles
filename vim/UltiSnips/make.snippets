@@ -1,0 +1,27 @@
+priority -50
+
+snippet latex "Template Makefile for LaTeX" t
+all:`!p
+
+dir = '' if t[2] == '' else t[2] + '/'
+
+snip >> 1
+for f in sorted(os.listdir('.')):
+    if re.match('.*\.tex', f) and os.path.isfile(f):
+        snip.rv += ' \\'
+        snip    += dir + f[:-4] + '.pdf'
+`
+
+export TEXC = latexmk${1/(.+)?/(?1: -latexoption=:)/}${1:-shell-escape}${2/(\w+)?/(?1: -output-directory=:)/}${2:build} -lualatex
+
+.PHONY: FORCE
+
+`!p snip.rv += dir`%.pdf: %.tex FORCE
+	\$(TEXC) \$<
+
+clean: FORCE
+	\$(TEXC) -C${2/(\w+)?/(?1:
+
+clean_all\: FORCE
+	rm -r $1:)/}
+endsnippet
