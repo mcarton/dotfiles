@@ -7,6 +7,9 @@ set play_sorted=true
 set repeat=true
 set show_remaining_time=true
 set shuffle=true
+bind -f common + vol +5%
+bind -f common - vol -5%
+bind -f common = vol -5%
 bind -f common B player-prev
 bind -f common q win-add-q
 bind -f common space player-pause
