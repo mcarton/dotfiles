@@ -35,6 +35,9 @@
     ~/.config/zsh/.zprofile:
         create: true
         path: zsh/zprofile
+    ~/.config/zsh/git-clonecd.zsh:
+        create: true
+        path: zsh/git-clonecd.zsh
     ~/.config/zsh/git-prompt:
         create: true
         path: zsh/zsh-git-prompt
