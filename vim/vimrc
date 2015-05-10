@@ -87,6 +87,9 @@
 " evolution
     autocmd BufRead /tmp/evo* set spell filetype=mail colorcolumn=72
 
+" why3
+    autocmd BufNewFile,BufRead *.why,*.mlw set filetype=why3
+
 " Flag problematic whitespace (trailing spaces, spaces before tabs).
 highlight BadWhitespace term=standout ctermbg=red guibg=red
 match BadWhitespace /\s\+$\| \+\t/
