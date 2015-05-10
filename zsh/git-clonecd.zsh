@@ -2,12 +2,14 @@
 
 function _git_cd() {
     shift # remove the 'clone'
-    tmp=$(mktemp git-clonecd-XXX)
+    tmp=$(mktemp /tmp/git-clonecd-XXX)
 
     git clone --progress $@ 2>&1 | tee "$tmp"
 
     repo=$(head -n 1 "$tmp" | sed -e 's/Cloning into '\''\(.*\)'\''.*/\1/')
     cd "$repo"
+
+    rm "$tmp"
 }
 
 function git() {
