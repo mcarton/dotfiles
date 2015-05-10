@@ -70,7 +70,7 @@ _arguments -C \
   "--user-url-frame[Set the value of a user URL frame (i.e., WXXX). To remove the frame, specify an empty value. e.g., --user-url-frame='SomeDesc:'.]" \
   "--write-images[Causes all attached images (APIC frames) to be written to the specified directory.]" \
   "--write-objects[Causes all attached objects (GEOB frames) to be written to the specified directory.]" \
-  "*::args:_files" \
+  "*:file:_files" \
   && return 0
 
 case $state in
