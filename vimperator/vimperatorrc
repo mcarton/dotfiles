@@ -6,6 +6,7 @@ set gui=nonavigation
 let mapleader = ","
 
 nnoremap <leader>d :tabduplicate<cr>
+nnoremap <leader>e <C-S-e>
 nnoremap <leader>s :myviewsource<cr>
 nnoremap <leader>z :interwiki<cr>
 nnoremap H h
