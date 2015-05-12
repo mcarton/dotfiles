@@ -22,6 +22,7 @@
         Plugin 'tpope/vim-eunuch'
         Plugin 'tpope/vim-liquid'
         Plugin 'tpope/vim-sensible'
+        Plugin 'tpope/vim-surround'
         Plugin 'yegappan/mru'
 
         call vundle#end()
