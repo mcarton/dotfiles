@@ -33,11 +33,12 @@
             "maintag:Hmm-le-rss",
             "maintag:Humeurs illustrées",
             "maintag:LLVM Project Blog",
+            "maintag:LinuxFr.org : les dépêches",
             "maintag:Liberation - À la une sur Libération",
             "maintag:Linux Magazine News",
-            "maintag:LinuxFr.org : les dépêches",
             "maintag:LinuxFr.org : les journaux",
             "maintag:Oh le joli bug !",
+            "maintag:PHD Comics",
             "maintag:Portail BDE",
             "maintag:Preshing on Programming",
             "maintag:Ranting @ 741 MHz",
@@ -169,6 +170,10 @@
         {
             "name": "Oh le joli bug !",
             "url": "http://oh-le-joli-bug.tumblr.com/rss"
+        },
+        {
+            "name": "PHD Comics",
+            "url": "http://www.phdcomics.com/gradfeed.php"
         },
         {
             "name": "Portail BDE",
