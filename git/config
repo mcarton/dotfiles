@@ -11,6 +11,7 @@
     st = status
     glg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold red)%d%C(reset)%n''          %C(black)%s%C(reset) %C(dim black)— %an%C(reset)' --all
     tree = log --graph --decorate --pretty=oneline --abbrev-commit
+    clonecd = dummy alias to have git and zsh know about git-clonecd
 
 
 [color]
