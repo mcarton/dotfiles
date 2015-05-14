@@ -41,6 +41,9 @@
     ~/.config/zsh/git-prompt:
         create: true
         path: zsh/zsh-git-prompt
-    ~/.config/zsh/completion:
+    ~/.config/zsh/completion/_eyeD3:
         create: true
-        path: zsh/completion
+        path: zsh/completion/_eyeD3
+    ~/.config/zsh/completion/_pip:
+        create: true
+        path: zsh/zsh-pip-completion/_pip
