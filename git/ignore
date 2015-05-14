@@ -19,6 +19,10 @@
 _minted-language
 _minted-report
 
+# Python
+__pycache__
+*.py[cdo]
+
 # Vim
 *.swo
 *.swp
