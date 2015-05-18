@@ -206,6 +206,7 @@ hover.install{widget=mynetwidget, box={}}
 
 -- CPU Temperature Widget
 local function color_temp(temp)
+    temp = math.floor(temp)
     if temp < 61 then
         return temp
     elseif  temp < 76 then
