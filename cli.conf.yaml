@@ -11,6 +11,10 @@
         create: true
         path: git
 
+    ~/.config/thefuck/settings.py:
+        create: true
+        path: thefuck/settings.py
+
     ~/.vim/vimrc:
         create: true
         path: vim/vimrc
