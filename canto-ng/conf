@@ -33,9 +33,9 @@
             "maintag:Hmm-le-rss",
             "maintag:Humeurs illustrées",
             "maintag:LLVM Project Blog",
-            "maintag:LinuxFr.org : les dépêches",
             "maintag:Liberation - À la une sur Libération",
             "maintag:Linux Magazine News",
+            "maintag:LinuxFr.org : les dépêches",
             "maintag:LinuxFr.org : les journaux",
             "maintag:Oh le joli bug !",
             "maintag:PHD Comics",
@@ -49,6 +49,7 @@
             "maintag:Standard C++ | News",
             "maintag:Standard C++ | Standardization",
             "maintag:Tales of C++",
+            "maintag:The Rust Programming Language Blog",
             "maintag:The View from Aristeia",
             "maintag:The coding love",
             "maintag:Trevor Jim",
@@ -214,6 +215,10 @@
         {
             "name": "Tales of C++",
             "url": "http://talesofcpp.fusionfenix.com/feed/"
+        },
+        {
+            "name": "The Rust Programming Language Blog",
+            "url": "http://blog.rust-lang.org/feed.xml"
         },
         {
             "name": "The View from Aristeia",
