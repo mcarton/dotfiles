@@ -61,7 +61,7 @@
     autocmd BufNewFile,BufRead *.tpp set filetype=cpp
     autocmd BufNewFile,BufRead /usr/include/c++/* set filetype=cpp
 
-    set path+=include
+    set path+=include,/usr/include/c++/*
 
 " for java
     autocmd Filetype java setlocal omnifunc=javacomplete#Complete
