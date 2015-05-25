@@ -15,6 +15,7 @@
         Plugin 'ervandew/supertab'
         Plugin 'gmarik/vundle'
         Plugin 'javacomplete'
+        Plugin 'matze/vim-move'
         Plugin 'pbrisbin/vim-mkdir'
         Plugin 'rust-lang/rust.vim'
         Plugin 'scrooloose/syntastic'
@@ -30,6 +31,8 @@
 
         call vundle#end()
     end
+
+let g:move_key_modifier = 'C'
 
 " Set <leader> key to a more azerty-friendly key (must appear before any
 " mapping using it)
