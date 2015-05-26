@@ -1,0 +1,15 @@
+Host carbone
+  User			mcarton
+  HostName		carbone.enseeiht.fr
+
+Host docker-skype
+  User			docker
+  Port			55555
+  HostName		0.0.1
+  RemoteForward		64713 localhost:4713
+  ForwardX11		yes
+  IdentityFile		~/.ssh/skype
+
+Host net7
+  User			cartonm
+  HostName		ssh.inpt.fr

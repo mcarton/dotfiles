@@ -11,6 +11,8 @@
         create: true
         path: git
 
+    ~/.ssh/config: ssh/config
+
     ~/.config/thefuck/settings.py:
         create: true
         path: thefuck/settings.py
