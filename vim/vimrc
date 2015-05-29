@@ -16,6 +16,7 @@
         Plugin 'gmarik/vundle'
         Plugin 'javacomplete'
         Plugin 'matze/vim-move'
+        Plugin 'mcarton/vim-vertical-help'
         Plugin 'pbrisbin/vim-mkdir'
         Plugin 'rust-lang/rust.vim'
         Plugin 'scrooloose/syntastic'
@@ -96,18 +97,6 @@ let g:move_key_modifier = 'C'
 
 " why3
     autocmd BufNewFile,BufRead *.why,*.mlw set filetype=why3
-
-" Vim help
-    function! VerticalHelp()
-        if !exists('w:help_is_moved')
-            wincmd L
-            let w:help_is_moved = 1
-        endif
-    endfunction
-
-    augroup HelpPages
-        autocmd FileType help nested call VerticalHelp()
-    augroup END
 
 " Flag problematic whitespace (trailing spaces, spaces before tabs).
 highlight BadWhitespace term=standout ctermbg=red guibg=red
