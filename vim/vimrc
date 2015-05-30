@@ -62,10 +62,6 @@ let g:move_key_modifier = 'C'
     let g:ycm_complete_in_comments=1
     let g:ycm_confirm_extra_conf=0
     set matchpairs+=<:>
-    " disable autocomment for //
-    au FileType c,cpp setlocal comments-=:// comments+=f://
-    autocmd BufNewFile,BufRead *.tpp set filetype=cpp
-    autocmd BufNewFile,BufRead /usr/include/c++/* set filetype=cpp
 
     set path+=include,/usr/include/c++/*
 
@@ -75,28 +71,20 @@ let g:move_key_modifier = 'C'
 
     let g:syntastic_java_javac_config_file_enabled=1
 
-" for html and css
-    autocmd Filetype htlm,css set sw=2
-
-" spell checking and wrapping in some file types
-    autocmd Filetype gitcommit set spell textwidth=72 nofoldenable colorcolumn=51,73
-    autocmd Filetype mkd,liquid,tex set spell textwidth=80
-
-" egg
+" change default filetypes
+    autocmd BufNewFile,BufRead *.tpp,/usr/include/c++/* set filetype=cpp
     autocmd BufNewFile,BufRead *.egg set filetype=egg
-
-" llvm ir code
     autocmd BufNewFile,BufRead *.ll set filetype=llvm
+    autocmd BufRead /tmp/evo* set filetype=mail
+    autocmd BufNewFile,BufRead *.tex set filetype=tex " default is plaintex
+    autocmd BufNewFile,BufRead *.mlw,*.why set filetype=why3
 
-" latex
-    " set filetype=tex instead of plaintex by default
-    autocmd BufNewFile,BufRead *.tex set filetype=tex suffixes+=*.aux,*.pdf,*.fdb_latexmk,*.fls,*.log,*.out,*.toc sw=2
-
-" evolution
-    autocmd BufRead /tmp/evo* set spell filetype=mail colorcolumn=72
-
-" why3
-    autocmd BufNewFile,BufRead *.why,*.mlw set filetype=why3
+" filetype specific configuration
+    autocmd FileType css,htlm set sw=2
+    autocmd FileType gitcommit set spell textwidth=72 nofoldenable colorcolumn=51,73
+    autocmd FileType liquid,mkd set spell textwidth=80
+    autocmd FileType mail set spell colorcolumn=72
+    autocmd FileType tex set spell suffixes+=*.aux,*.pdf,*.fdb_latexmk,*.fls,*.log,*.out,*.toc sw=2
 
 " Flag problematic whitespace (trailing spaces, spaces before tabs).
 highlight BadWhitespace term=standout ctermbg=red guibg=red
@@ -154,7 +142,7 @@ noremap <leader>z <ESC>:call ToggleSpell()<CR>
 
     " color at 80th column
     set colorcolumn=81,91,101
-    hi ColorColumn ctermbg=lightgrey
+    highlight ColorColumn ctermbg=lightgrey
 
     " close quick fix list on selection
     autocmd FileType qf nmap <buffer> <cr> <cr>:ccl<cr>
