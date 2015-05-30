@@ -4,9 +4,12 @@ xkb_symbols "yesdeadkeys" {
 
     name[Group1]="French";
 
+    key <TLDE>	{ [  braceleft, bracketleft, onesuperior, dead_cedilla ]	};
     key <AE02>	{ [ dead_acute,          2,   asciitilde,    oneeighth ]	};
     key <AE07>	{ [  backslash,          7,        grave, seveneighths ]	};
+    key <AE10>	{ [ braceright,          0,           at,       Agrave ]	};
     key <AC11>	{ [ dead_grave,    percent, dead_circumflex, dead_caron]	};
+    key <BKSL>	{ [   asterisk, numbersign,           mu,  dead_macron ]	};
 
     include "level3(ralt_switch)"
 };
