@@ -12,7 +12,7 @@ for f in sorted(os.listdir('.')):
         snip    += dir + f[:-4] + '.pdf'
 `
 
-export TEXC = latexmk${1/(.+)?/(?1: -latexoption=:)/}${1:-shell-escape}${2/(\w+)?/(?1: -output-directory=:)/}${2:build} -lualatex
+export TEXC = latexmk${1/.+/ -latexoption=/}${1:-shell-escape}${2/.+/ -output-directory=/}${2:build} -lualatex
 
 .PHONY: FORCE
 
@@ -20,8 +20,8 @@ export TEXC = latexmk${1/(.+)?/(?1: -latexoption=:)/}${1:-shell-escape}${2/(\w+)
 	\$(TEXC) \$<
 
 clean: FORCE
-	\$(TEXC) -C${2/(\w+)?/(?1:
+	\$(TEXC) -C${2/(.+)/
 
 clean_all\: FORCE
-	rm -r $1:)/}
+	rm -r $1/}
 endsnippet
