@@ -9,4 +9,4 @@
 	url = https://github.com/gmarik/Vundle.vim.git
 [submodule "zsh/zsh-pip-completion"]
 	path = zsh/zsh-pip-completion
-	url = git@github.com:dgladkov/zsh-pip-completion.git
+	url = https://github.com/dgladkov/zsh-pip-completion.git
