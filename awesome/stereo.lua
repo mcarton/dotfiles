@@ -66,4 +66,12 @@ local function worker(format, warg)
 end
 -- }}}
 
+function volume:up()
+    os.execute("amixer -q sset Master 5%+")
+end
+
+function volume:down()
+    os.execute("amixer -q sset Master 5%-")
+end
+
 return setmetatable(volume, { __call = function(_, ...) return worker(...) end })

@@ -131,7 +131,11 @@ hover.install{
         result = helpers.format(result, stereo('', 'Master'))
         result = helpers.format(result, cmus())
         return result
-    end
+    end,
+    buttons = {
+        { modifier={}, button=4, fn=stereo.up   },
+        { modifier={}, button=5, fn=stereo.down },
+    }
 }
 
 -- Battery widget
