@@ -15,9 +15,9 @@ module("hover")
 
 local hover = {}
 
-local function notify(fn, old_id)
+local function notify(text, old_id)
     return naughty.notify{
-        text = string.format('<span font_desc="monospace">%s</span>', fn()),
+        text = string.format('<span font_desc="monospace">%s</span>', text),
         timeout = 0,
         hover_timeout = 0,
         screen = capi.mouse.screen,
@@ -35,7 +35,7 @@ function hover.install(arg)
         'mouse::enter',
         function ()
             if arg.enter ~= nil then
-                arg.box = notify(arg.enter)
+                arg.box = notify(arg.enter())
             end
             vicious.force({ widget })
         end
@@ -59,7 +59,7 @@ function hover.install(arg)
                 awful.button(
                     rule.modifier, rule.button,
                     function ()
-                        arg.box = notify(rule.fn, arg.box.id)
+                        arg.box = notify(rule.fn() or arg.enter(), arg.box.id)
                     end
                 )
             )
