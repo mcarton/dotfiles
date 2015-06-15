@@ -60,6 +60,7 @@ function hover.install(arg)
                     rule.modifier, rule.button,
                     function ()
                         arg.box = notify(rule.fn() or arg.enter(), arg.box.id)
+                        vicious.force({ widget })
                     end
                 )
             )
