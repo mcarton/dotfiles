@@ -16,6 +16,18 @@ local helpers = require("vicious.helpers")
 -- vicious.widgets.cmus
 local cmus = {}
 
+function cmus:next()
+    io.popen("cmus-remote --next"):close()
+end
+
+function cmus:pause()
+    io.popen("cmus-remote --pause"):close()
+end
+
+function cmus:prev()
+    io.popen("cmus-remote --prev"):close()
+end
+
 -- {{{ cmus widget type
 local function worker(format, warg)
     local cmus_state  = {

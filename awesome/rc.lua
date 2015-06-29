@@ -133,6 +133,9 @@ hover.install{
         return result
     end,
     buttons = {
+        { modifier={}, button=1, fn=cmus.next   },
+        { modifier={}, button=2, fn=cmus.pause  },
+        { modifier={}, button=3, fn=cmus.prev   },
         { modifier={}, button=4, fn=stereo.up   },
         { modifier={}, button=5, fn=stereo.down },
     }
