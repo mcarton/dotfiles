@@ -265,9 +265,11 @@ calendar = require('calendar')
 hover.install{
     widget=mytextclock, box={},
     enter=calendar.timezones({
+        {"Japan     ", "Asia/Tokyo"},
+        {"Singapore ", "Asia/Singapore"},
         {"UTC       ", "UTC"},
-        {"LA        ", "America/Los_Angeles"},
         {"Martinique", "America/Martinique"},
+        {"LA        ", "America/Los_Angeles"},
     })
 }
 hover.install{
