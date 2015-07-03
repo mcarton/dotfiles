@@ -443,6 +443,8 @@ globalkeys = awful.util.table.join(
     -- Screen
     awful.key({ modkey,           }, "F1",    function () awful.screen.focus(1) end        ),
     awful.key({ modkey,           }, "F2",    function () awful.screen.focus(2) end        ),
+    awful.key({ modkey,           }, "a",     function () awful.screen.focus_relative(1) end),
+
     -- Prompt
     awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
