@@ -123,8 +123,8 @@ hover.install{
               .. 'Artist: ${artist}\n'
               .. 'Title:  ${title}\n'
               .. 'Album:  ${album}\n'
+              .. 'Date:   ${date}\n'
               .. 'Genre:  ${genre}\n'
-              .. 'Artist: ${artist}\n'
               .. 'Volume: ${vol_left} — ${vol_right}\n'
               .. 'File:   ${file}'
 
