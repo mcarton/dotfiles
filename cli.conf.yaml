@@ -1,5 +1,5 @@
 - link:
-    ~/.config/canto-ng/conf:
+    ~/.config/canto/conf:
         create: true
         path: canto-ng/conf
 
