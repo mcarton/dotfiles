@@ -6,6 +6,7 @@
     default = simple
 
 [alias]
+    amend = com --amend --no-edit
     clonecd = dummy alias to have git and zsh know about git-clonecd
     co = checkout
     com = commit --verbose
