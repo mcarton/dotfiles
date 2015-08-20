@@ -23,9 +23,6 @@
     ~/.config/awesome/video.lua:
         create: true
         path: awesome/video.lua
-    ~/.config/awesome/volume.lua:
-        create: true
-        path: awesome/volume.lua
 
     ~/.config/terminator/config:
         create: true
