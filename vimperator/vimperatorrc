@@ -1,6 +1,7 @@
 set runtimepath=~/.config/vimperator
 
 hi StatusLine color: black;
+set urlseparator="\\|"
 set gui=nonavigation
 
 let mapleader = ","
