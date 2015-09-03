@@ -53,3 +53,7 @@
 "xbacklight -dec 10"
     m:0x0 + c:232
     XF86MonBrightnessDown
+
+"i3lock"
+    m:0x40 + c:38
+    Mod4 + q
