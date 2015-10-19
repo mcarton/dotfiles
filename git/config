@@ -9,6 +9,7 @@
     amend = commit --amend
     clonecd = dummy alias to have git and zsh know about git-clonecd
     co = checkout
+    colored-diff = diff --word-diff=color
     com = commit --verbose
     glg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold red)%d%C(reset)%n''          %C(black)%s%C(reset) %C(dim black)— %an%C(reset)' --all
     last = log -1 HEAD
