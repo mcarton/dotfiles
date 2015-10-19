@@ -1,0 +1,31 @@
+include "%L"
+
+<Multi_key> <apostrophe> <apostrophe>		: "´"
+<Multi_key> <less> <minus> <greater>		: "↔"
+<Multi_key> <less> <minus> <space>		: "←"
+<Multi_key> <v> <period> <period>		: "⋮"
+
+# Maths:
+<Multi_key> <A> <A>				: "∀"
+<Multi_key> <E> <E>				: "∃"
+<Multi_key> <asciitilde> <equal>		: "≈"
+<Multi_key> <colon> <equal>			: "≔"
+<Multi_key> <equal> <greater>			: "⇒"
+<Multi_key> <i> <n>				: "∈"
+<Multi_key> <less> <equal> <greater>		: "⇔"
+
+# Some English and French phonetic:
+<Multi_key> <f> <E>				: "ɛ"
+<Multi_key> <f> <a> <n>				: "ɑ̃"
+<Multi_key> <f> <c> <h>				: "ʃ"
+<Multi_key> <f> <e>				: "ə"
+<Multi_key> <f> <g> <n>				: "ɲ"
+<Multi_key> <f> <i> <n>				: "ɛ̃"
+<Multi_key> <f> <j>				: "ʒ"
+<Multi_key> <f> <n> <g>				: "ŋ"
+<Multi_key> <f> <O>				: "ɔ"
+<Multi_key> <f> <o> <n>				: "ɔ̃"
+<Multi_key> <f> <r>				: "ʁ"
+<Multi_key> <f> <s>				: "θ"
+<Multi_key> <f> <u>				: "ɥ"
+<Multi_key> <f> <z>				: "ð"

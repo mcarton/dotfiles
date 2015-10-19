@@ -31,3 +31,5 @@
     ~/.xbindkeysrc: xbindkeys/xbindkeysrc
 
     ~/.xinitrc: xinit/xinitrc
+
+    ~/.config/XCompose: keyboard/XCompose
