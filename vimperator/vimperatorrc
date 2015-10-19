@@ -8,7 +8,6 @@ let mapleader = ","
 
 nnoremap <leader>d :tabduplicate<cr>
 nnoremap <leader>e <C-S-e>
-nnoremap <leader>s :myviewsource<cr>
 nnoremap <leader>z :interwiki<cr>
 nnoremap H h
 nnoremap L l
@@ -24,20 +23,6 @@ js << EOF
         url = io.system("interwiki", content.location.href)
         if (url) {
             content.location.href = url
-        }
-    }
-EOF
-
-command -nargs=0 myviewsource javascript view_source()
-js << EOF
-    function view_source() {
-        var s = ('view-source:').length;
-
-        if (content.location.href.slice(0, s) == 'view-source:') {
-            content.location.href = content.location.href.slice(s);
-        }
-        else {
-            content.location.href = 'view-source:' + content.location.href;
         }
     }
 EOF
