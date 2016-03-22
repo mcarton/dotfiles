@@ -268,6 +268,7 @@ hover.install{
         {"Japan     ", "Asia/Tokyo"},
         {"Singapore ", "Asia/Singapore"},
         {"UTC       ", "UTC"},
+        {"NY        ", "America/New_York"},
         {"Martinique", "America/Martinique"},
         {"LA        ", "America/Los_Angeles"},
     })
