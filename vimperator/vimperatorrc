@@ -16,6 +16,7 @@ nnoremap gl gt
 nnoremap gt <C-^>
 nnoremap h H
 nnoremap l L
+nnoremap <C-W> <Nop>
 
 command -nargs=0 interwiki javascript interwiki()
 js << EOF
