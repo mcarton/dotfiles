@@ -1,41 +1,41 @@
 [global_config]
-  geometry_hinting = False
-  enabled_plugins = ,
   always_split_with_profile = True
-  inactive_color_offset = 0.69
   borderless = True
+  enabled_plugins = ,
+  geometry_hinting = False
+  inactive_color_offset = 0.69
 [keybindings]
-  zoom_in = ""
-  zoom_out = ""
-  rotate_cw = ""
-  group_tab = ""
   full_screen = ""
+  group_all = ""
+  group_tab = ""
+  new_terminator = ""
   new_window = <Primary>Return
   rotate_ccw = ""
-  new_terminator = ""
+  rotate_cw = ""
   ungroup_all = ""
   ungroup_tab = ""
-  group_all = ""
-[profiles]
-  [[default]]
-    scrollbar_position = hidden
-    palette = "#2e3436:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#c2cacc:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
-    background_image = None
-    scrollback_lines = 5000
-    use_system_font = False
-    scroll_on_output = False
-    icon_bell = False
-    show_titlebar = False
-    font = DejaVu Sans Mono for Powerline 9
-    word_chars = -A-Za-z0-9_
-    use_theme_colors = True
+  zoom_in = ""
+  zoom_out = ""
 [layouts]
   [[default]]
     [[[child1]]]
+      parent = window0
       profile = default
       type = Terminal
-      parent = window0
     [[[window0]]]
-      type = Window
       parent = ""
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    background_image = None
+    font = DejaVu Sans Mono for Powerline 9
+    icon_bell = False
+    palette = "#2e3436:#cc0000:#4e9a06:#c4a000:#3465a4:#75507b:#06989a:#c2cacc:#555753:#ef2929:#8ae234:#fce94f:#729fcf:#ad7fa8:#34e2e2:#eeeeec"
+    scroll_on_output = False
+    scrollback_lines = 5000
+    scrollbar_position = hidden
+    show_titlebar = False
+    use_system_font = False
+    use_theme_colors = True
+    word_chars = -A-Za-z0-9_
