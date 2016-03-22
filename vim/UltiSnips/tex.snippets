@@ -2,6 +2,18 @@ priority -50
 
 extends texmath
 
+snippet documentclass
+\documentclass{${1:scrartcl}}
+
+\usepackage${2/(\w+)?/(?1:[:)/}${2:frenchb}${2/(\w+)?/(?1:]:)/}{babel}
+\usepackage{fontspec}
+\usepackage{hyperref}
+
+\begin{document}
+	$0
+\end{document}
+endsnippet
+
 snippet "b(egin)?" "begin{} / end{}" br
 \begin{${1:something}}
 	${0:${VISUAL}}
