@@ -533,6 +533,7 @@ globalkeys = awful.util.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     awful.key({ modkey }, "f", function () awful.util.spawn_with_shell("firefox") end),
     awful.key({ modkey }, "n", function () awful.util.spawn_with_shell("nautilus --no-desktop") end),
+    awful.key({ modkey }, "q", function () awful.util.spawn_with_shell("i3lock") end),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"})
