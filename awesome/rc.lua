@@ -44,7 +44,7 @@ end
 -- {{{ Variable definitions
 -- @DOC_LOAD_THEME@
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(awful.util.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_dir('config') .. "/theme.lua")
 
 -- @DOC_DEFAULT_APPLICATIONS@
 -- This is used later as the default terminal and editor to run.
@@ -102,12 +102,11 @@ end
 mymainmenu = awful.menu(
   { items = {
     { "restart awesome", awesome.restart },
-    { "close session", {{ "I mean it", awesome.quit }} },
+    { "close session", {{ "I mean it", function() awesome.quit() end }} },
     { "suspend",   {
-        { "but don't lock", function() awful.util.spawn("sudo pm-suspend") end },
-        { "and lock", function() awful.util.spawn_with_shell("i3lock && sudo pm-suspend") end }
+        { "but don't lock", function() awful.util.spawn("systemctl suspend") end },
+        { "and lock", function() awful.util.spawn_with_shell("i3lock && systemctl suspend") end }
     } },
-    { "hibernate", {{ "I mean it", function() awful.util.spawn("sudo pm-hibernate") end }} },
     { "shutdown",  {{ "I mean it", function() awful.util.spawn("systemctl poweroff") end }} },
     { "restart",   {{ "I mean it", function() awful.util.spawn("systemctl reboot") end }} }
   }
@@ -231,25 +230,25 @@ local function color_temp(temp)
     end
 end
 
-local temp = require('temp')
-mytempwidget = wibox.widget.textbox()
-vicious.register(mytempwidget, temp,
-    function (widget, args)
-        return color_temp(args.physical.current) .. '°C'
-    end, 61
-)
-hover.install{
-    widget=mytempwidget, box={},
-    enter=function ()
-        temps = temp()
-        return string.format(
-            "%-15s: %s°C\n%-15s: %s°C\n%-15s: %s°C",
-            temps.physical.name, color_temp(temps.physical.current),
-            temps.core0.name, color_temp(temps.core0.current),
-            temps.core1.name, color_temp(temps.core1.current)
-        )
-    end
-}
+-- local temp = require('temp')
+-- mytempwidget = wibox.widget.textbox()
+-- vicious.register(mytempwidget, temp,
+--     function (widget, args)
+--         return color_temp(args.physical.current) .. '°C'
+--     end, 61
+-- )
+-- hover.install{
+--     widget=mytempwidget, box={},
+--     enter=function ()
+--         temps = temp()
+--         return string.format(
+--             "%-15s: %s°C\n%-15s: %s°C\n%-15s: %s°C",
+--             temps.physical.name, color_temp(temps.physical.current),
+--             temps.core0.name, color_temp(temps.core0.current),
+--             temps.core1.name, color_temp(temps.core1.current)
+--         )
+--     end
+-- }
 
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
@@ -420,6 +419,36 @@ awful.screen.connect_for_each_screen(function(s)
             s.mylayoutbox,
         },
     }
+
+    w = wibox.widget{
+        markup = 'This <i>is</i> a <b>textbox</b>!!!',
+        align  = 'center',
+        valign = 'center',
+        widget = wibox.widget.textbox
+    }
+
+    w = wibox.widget {
+        value               = 25,
+        minimum             = 0,
+        maximum             = 100,
+        widget              = wibox.widget.slider,
+        bar_color           = beautiful.border_color,
+        handle_color        = beautiful.bg_normal,
+    }
+    -- w = wibox.widget {
+    --     {
+    --         max_value     = 1,
+    --         value         = 0.33,
+    --         widget        = wibox.widget.progressbar,
+    --     },
+    --     forced_height = 100,
+    --     forced_width  = 20,
+    --     direction     = 'east',
+    --     layout        = wibox.container.rotate,
+    -- }
+    w = wibox.container.rotate(w, "west")
+
+    -- r = awful.wibox{position = "right", screen = s, widget = w}
 end)
 -- }}}
 
@@ -541,7 +570,7 @@ globalkeys = awful.util.table.join(
 
 -- @DOC_CLIENT_KEYBINDINGS@
 clientkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "f",
+    awful.key({ modkey, "Shift"   }, "f",
         function (c)
             c.fullscreen = not c.fullscreen
             c:raise()
