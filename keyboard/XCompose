@@ -29,3 +29,7 @@ include "%L"
 <Multi_key> <f> <s>				: "θ"
 <Multi_key> <f> <u>				: "ɥ"
 <Multi_key> <f> <z>				: "ð"
+
+# Some international QWERTY niceness:
+<dead_acute> <dead_acute>			: "'"
+<dead_diaeresis> <dead_diaeresis>		: "\""
