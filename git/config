@@ -1,6 +1,7 @@
 [user]
     name = mcarton
     email = cartonmartin+git@gmail.com
+	signingkey = 4cba45e8
 
 [push]
     default = simple
