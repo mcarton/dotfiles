@@ -32,3 +32,5 @@
 [diff "image"]
     command = ~/programs/scripts/img-diff
 
+[commit]
+	verbose = true
