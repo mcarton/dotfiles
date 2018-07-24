@@ -181,3 +181,6 @@ noremap <leader>z <ESC>:call ToggleSpell()<CR>
     nnoremap <leader>w <c-w>
     map <leader>n :NERDTreeToggle<CR>
     map <leader>N :edit .<CR>
+
+    autocmd InsertEnter * silent !echo -ne "\x1b[\x35 q"
+    autocmd InsertLeave * silent !echo -ne "\x1b[\x30 q"
